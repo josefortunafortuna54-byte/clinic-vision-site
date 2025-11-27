@@ -13,6 +13,7 @@ const Navigation = () => {
     { name: "Serviços", path: "/servicos" },
     { name: "Produtos", path: "/produtos" },
     { name: "Inovações", path: "/innovacoes" },
+    { name: "Blog", path: "/blog" },
     { name: "Contactos", path: "/contactos" },
   ];
 
@@ -20,14 +21,25 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border shadow-soft">
+      {/* Top Contact Bar */}
+      <div className="bg-primary text-primary-foreground py-2 text-sm">
+        <div className="container-custom flex flex-wrap items-center justify-center md:justify-end gap-4">
+          <a href="tel:+244926149661" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            📞 +244 926 149 661
+          </a>
+          <a href="mailto:quicepquicep@gmail.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            ✉️ quicepquicep@gmail.com
+          </a>
+        </div>
+      </div>
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">C</span>
+              <span className="text-primary-foreground font-bold text-xl">Q</span>
             </div>
             <span className="font-poppins font-bold text-lg md:text-xl text-foreground">
-              Clínica Saúde Integral
+              Clínica QUICEP
             </span>
           </Link>
 

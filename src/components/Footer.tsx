@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* About Section */}
           <div>
-            <h3 className="font-poppins font-bold text-xl mb-4">Clínica Saúde Integral</h3>
+            <h3 className="font-poppins font-bold text-xl mb-4">Clínica QUICEP</h3>
             <p className="text-background/80 mb-4">
-              Cuidados de saúde modernos com tecnologia inovadora e atendimento humanizado.
+              Saúde Natural com Amor — Cuidados integrais e tratamentos naturais.
             </p>
           </div>
 
@@ -47,15 +47,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <span className="text-background/80">Maputo, Moçambique</span>
+                <span className="text-background/80">Rua da Fesa, Gamek Vila, próximo ao Café da Vila – Luanda</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span className="text-background/80">+258 84 000 0000</span>
+                <a href="tel:+244926149661" className="text-background/80 hover:text-background transition-colors">+244 926 149 661</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <span className="text-background/80">info@clinica.co.mz</span>
+                <a href="mailto:quicepquicep@gmail.com" className="text-background/80 hover:text-background transition-colors">quicepquicep@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -82,7 +82,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-background/20 mt-12 pt-8 text-center text-background/70">
-          <p>&copy; {new Date().getFullYear()} Clínica Saúde Integral. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Clínica QUICEP — Saúde Natural com Amor — Tel: +244 926 149 661 — Email: quicepquicep@gmail.com</p>
         </div>
       </div>
     </footer>
