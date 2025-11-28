@@ -1,17 +1,14 @@
-import { useState } from "react";
-import { Bot, Calendar, Video, User, Map, Stethoscope, QrCode, Mic, Eye, MessageCircle } from "lucide-react";
+import { Bot, Calendar, Video, User, Map, Stethoscope, QrCode, Mic, Eye } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import AIChat from "@/components/AIChat";
+import AppointmentForm from "@/components/AppointmentForm";
+import TeleconsultInterface from "@/components/TeleconsultInterface";
 
 const Innovacoes = () => {
-  const [chatMessages, setChatMessages] = useState<Array<{role: string, text: string}>>([]);
-  const [chatInput, setChatInput] = useState("");
-
   const innovations = [
     {
       icon: Bot,
@@ -69,27 +66,6 @@ const Innovacoes = () => {
     }
   ];
 
-  const handleChatSubmit = () => {
-    if (!chatInput.trim()) return;
-    
-    setChatMessages(prev => [...prev, { role: "user", text: chatInput }]);
-    
-    // Simulação de resposta do assistente
-    setTimeout(() => {
-      const responses = [
-        "Olá! Como posso ajudá-lo hoje?",
-        "Para agendar uma consulta, pode usar o nosso sistema de agendamento online ou contactar +244 926 149 661.",
-        "Os nossos produtos naturais são certificados e de alta qualidade. Qual produto lhe interessa?",
-        "Estamos localizados na Rua da Fesa, Gamek Vila, próximo ao Café da Vila em Luanda.",
-        "Oferecemos teleconsultas! Pode agendar através do WhatsApp ou online."
-      ];
-      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-      setChatMessages(prev => [...prev, { role: "assistant", text: randomResponse }]);
-    }, 1000);
-    
-    setChatInput("");
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -136,47 +112,11 @@ const Innovacoes = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
                 <Bot className="h-16 w-16 text-primary mx-auto mb-4" />
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Experimente o Assistente Virtual</h2>
-                <p className="text-muted-foreground">Faça perguntas sobre serviços, produtos ou agende consultas</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Assistente Virtual com IA</h2>
+                <p className="text-muted-foreground">Chat inteligente com respostas em tempo real sobre serviços, produtos e agendamentos</p>
               </div>
               
-              <Card className="p-6">
-                <div className="space-y-4 mb-4 h-96 overflow-y-auto">
-                  {chatMessages.length === 0 ? (
-                    <div className="text-center text-muted-foreground py-20">
-                      <MessageCircle className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                      <p>Inicie uma conversa com o nosso assistente virtual</p>
-                    </div>
-                  ) : (
-                    chatMessages.map((msg, idx) => (
-                      <div 
-                        key={idx} 
-                        className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                      >
-                        <div className={`max-w-[70%] p-4 rounded-lg ${
-                          msg.role === 'user' 
-                            ? 'bg-primary text-primary-foreground' 
-                            : 'bg-muted'
-                        }`}>
-                          {msg.text}
-                        </div>
-                      </div>
-                    ))
-                  )}
-                </div>
-                <div className="flex gap-2">
-                  <Input 
-                    placeholder="Digite sua mensagem..." 
-                    value={chatInput}
-                    onChange={(e) => setChatInput(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleChatSubmit()}
-                  />
-                  <Button onClick={handleChatSubmit}>Enviar</Button>
-                </div>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Para assistência real, contacte +244 926 149 661
-                </p>
-              </Card>
+              <AIChat />
             </div>
           </div>
         </section>
@@ -188,47 +128,25 @@ const Innovacoes = () => {
               <div className="text-center mb-8">
                 <Calendar className="h-16 w-16 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Agendamento Inteligente</h2>
-                <p className="text-muted-foreground">Escolha o dia e horário ideal para sua consulta</p>
+                <p className="text-muted-foreground">Sistema automatizado que salva seus dados e envia direto para WhatsApp</p>
               </div>
               
-              <Card className="p-8">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Nome Completo</label>
-                    <Input placeholder="Digite seu nome" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Telefone</label>
-                    <Input placeholder="+244" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Tipo de Consulta</label>
-                    <select className="w-full p-2 border rounded-lg">
-                      <option>Ginecologia</option>
-                      <option>Naturopatia</option>
-                      <option>Consulta Geral</option>
-                      <option>Teleconsulta</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Data Preferida</label>
-                    <Input type="date" />
-                  </div>
-                  <div className="md:col-span-2">
-                    <label className="block text-sm font-medium mb-2">Mensagem (Opcional)</label>
-                    <Textarea placeholder="Descreva brevemente o motivo da consulta" rows={3} />
-                  </div>
-                </div>
-                <div className="mt-6 flex gap-4">
-                  <Button className="flex-1">Confirmar Agendamento</Button>
-                  <Button variant="outline" onClick={() => window.open('https://wa.me/244926149661', '_blank')}>
-                    Agendar via WhatsApp
-                  </Button>
-                </div>
-                <p className="text-xs text-muted-foreground mt-4 text-center">
-                  Após submeter, entraremos em contacto para confirmar
-                </p>
-              </Card>
+              <AppointmentForm />
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Demo - Teleconsulta */}
+        <section className="section-spacing bg-muted/30">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <Video className="h-16 w-16 text-primary mx-auto mb-4" />
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Teleconsulta Integrada</h2>
+                <p className="text-muted-foreground">Consulte nossos especialistas por videochamada de qualquer lugar</p>
+              </div>
+              
+              <TeleconsultInterface />
             </div>
           </div>
         </section>
