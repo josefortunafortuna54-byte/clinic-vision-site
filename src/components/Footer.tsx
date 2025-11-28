@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <h3 className="font-poppins font-bold text-xl mb-4">Clínica QUICEP</h3>
             <p className="text-background/80 mb-4">
-              Saúde Natural com Amor — Cuidados integrais e tratamentos naturais.
+              Saúde Natural com Amor — Clínica de Saúde Reprodutiva.
             </p>
           </div>
 
@@ -47,11 +47,16 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <span className="text-background/80">Rua da Fesa, Gamek Vila, próximo ao Café da Vila – Luanda</span>
+                <span className="text-background/80">Rua da Fesa, Vila do Gamek, Município da Samba, próximo ao Café da Vila</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-5 w-5 flex-shrink-0" />
-                <a href="tel:+244926149661" className="text-background/80 hover:text-background transition-colors">+244 926 149 661</a>
+              <li className="flex flex-col gap-1">
+                <div className="flex items-center gap-2">
+                  <Phone className="h-5 w-5 flex-shrink-0" />
+                  <a href="tel:+244973003455" className="text-background/80 hover:text-background transition-colors">973 003 455 / 957 600 902</a>
+                </div>
+                <div className="ml-7">
+                  <a href="tel:+244956166491" className="text-background/80 hover:text-background transition-colors">956 166 491 / 957 600 092</a>
+                </div>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 flex-shrink-0" />
@@ -67,14 +72,26 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <Clock className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <div className="text-background/80">
-                  <p className="font-medium">Segunda - Sexta</p>
-                  <p>08:00 - 18:00</p>
+                  <p className="font-medium">Domingo - Quinta</p>
+                  <p>08:00 - 17:00</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 ml-7">
+                <div className="text-background/80">
+                  <p className="font-medium">Sexta-feira</p>
+                  <p>08:00 - 14:00</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-2 ml-7">
+                <div className="text-background/80">
+                  <p className="font-medium">Feriados</p>
+                  <p>08:00 - 14:00</p>
                 </div>
               </li>
               <li className="flex items-start gap-2 ml-7">
                 <div className="text-background/80">
                   <p className="font-medium">Sábado</p>
-                  <p>08:00 - 13:00</p>
+                  <p>Encerrado</p>
                 </div>
               </li>
             </ul>
@@ -82,7 +99,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-background/20 mt-12 pt-8 text-center text-background/70">
-          <p>&copy; {new Date().getFullYear()} Clínica QUICEP — Saúde Natural com Amor — Tel: +244 926 149 661 — Email: quicepquicep@gmail.com</p>
+          <p>&copy; {new Date().getFullYear()} Clínica QUICEP — Saúde Natural com Amor — Tel: 973 003 455 / 957 600 902 — Email: quicepquicep@gmail.com</p>
         </div>
       </div>
     </footer>
