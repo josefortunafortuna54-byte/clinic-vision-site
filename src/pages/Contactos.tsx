@@ -45,25 +45,27 @@ const Contactos = () => {
                 <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-bold mb-2">Endereço</h3>
                 <p className="text-sm text-muted-foreground">
-                  Rua da Fesa, Gamek Vila<br />
-                  Próximo ao Café da Vila<br />
-                  Luanda, Angola
+                  Rua da Fesa, Vila do Gamek<br />
+                  Município da Samba<br />
+                  Próximo ao Café da Vila
                 </p>
               </Card>
 
               <Card className="p-6 text-center card-hover">
                 <Phone className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2">Telefone / WhatsApp</h3>
-                <a 
-                  href="tel:+244926149661" 
-                  className="text-sm text-primary hover:underline block mb-1"
-                >
-                  +244 926 149 661
-                </a>
+                <h3 className="font-bold mb-2">Telefones / WhatsApp</h3>
+                <div className="space-y-1 mb-3">
+                  <a href="tel:+244973003455" className="text-sm text-primary hover:underline block">
+                    973 003 455 / 957 600 902
+                  </a>
+                  <a href="tel:+244956166491" className="text-sm text-primary hover:underline block">
+                    956 166 491 / 957 600 092
+                  </a>
+                </div>
                 <Button 
                   size="sm" 
                   variant="outline"
-                  onClick={() => window.open('https://wa.me/244926149661', '_blank')}
+                  onClick={() => window.open('https://wa.me/244973003455', '_blank')}
                 >
                   Abrir WhatsApp
                 </Button>
@@ -84,9 +86,10 @@ const Contactos = () => {
                 <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-bold mb-2">Horário</h3>
                 <p className="text-sm text-muted-foreground">
-                  Segunda - Sexta<br />
-                  08:00 - 18:00<br />
-                  <span className="mt-2 block">Sábado<br />08:00 - 13:00</span>
+                  Domingo - Quinta: 08:00 - 17:00<br />
+                  Sexta-feira: 08:00 - 14:00<br />
+                  Feriados: 08:00 - 14:00<br />
+                  <span className="mt-2 block font-semibold">Sábado: Encerrado</span>
                 </p>
               </Card>
             </div>
@@ -165,7 +168,7 @@ const Contactos = () => {
               size="lg" 
               variant="secondary" 
               className="text-lg px-8"
-              onClick={() => window.open('https://wa.me/244926149661', '_blank')}
+              onClick={() => window.open('https://wa.me/244973003455', '_blank')}
             >
               Contactar via WhatsApp
             </Button>

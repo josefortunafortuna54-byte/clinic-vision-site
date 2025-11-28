@@ -1,59 +1,71 @@
-import { Heart, Stethoscope, Video, Microscope, Leaf, Users, Baby, Brain } from "lucide-react";
+import { Heart, Stethoscope, Video, Microscope, Leaf, Users, Baby, Brain, Droplet, TestTube, ScanLine, Apple, Gift } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Servicos = () => {
-  const services = [
-    {
-      icon: Stethoscope,
-      title: "Consultas Gerais",
-      description: "Atendimento médico completo com profissionais experientes para diagnóstico, tratamento e acompanhamento de saúde geral.",
-      features: ["Check-up completo", "Diagnóstico preciso", "Planos de tratamento personalizados"],
-    },
-    {
-      icon: Heart,
-      title: "Ginecologia",
-      description: "Cuidados especializados em saúde da mulher, desde consultas de rotina até tratamentos específicos.",
-      features: ["Exames preventivos", "Acompanhamento pré-natal", "Saúde reprodutiva"],
-    },
-    {
-      icon: Baby,
-      title: "Saúde Sexual e Reprodutiva",
-      description: "Serviços dedicados ao bem-estar sexual e planeamento familiar com abordagem moderna e confidencial.",
-      features: ["Planeamento familiar", "Tratamentos de fertilidade", "Aconselhamento"],
-    },
-    {
-      icon: Video,
-      title: "Consultas Online",
-      description: "Atendimento médico à distância com tecnologia segura, permitindo consultas no conforto da sua casa.",
-      features: ["Videochamadas seguras", "Prescrição digital", "Disponível 24/7"],
-    },
-    {
-      icon: Microscope,
-      title: "Análises Clínicas",
-      description: "Laboratório equipado com tecnologia moderna para exames precisos e resultados rápidos.",
-      features: ["Análises completas", "Resultados em 24h", "Colheita ao domicílio"],
-    },
-    {
-      icon: Leaf,
-      title: "Farmácia Natural",
-      description: "Produtos naturais e suplementos de alta qualidade para complementar seu tratamento de saúde.",
-      features: ["Produtos certificados", "Consultoria especializada", "Soluções naturais"],
-    },
-    {
-      icon: Brain,
-      title: "Aconselhamento Terapêutico",
-      description: "Suporte psicológico e emocional com profissionais qualificados para seu bem-estar mental.",
-      features: ["Terapia individual", "Terapia de casal", "Gestão de stress"],
-    },
-    {
-      icon: Users,
-      title: "Medicina Familiar",
-      description: "Cuidados integrados para toda a família, desde pediatria até geriatria.",
-      features: ["Vacinação", "Pediatria", "Geriatria"],
-    },
+  const consultations = [
+    { name: "Naturopatia", icon: Leaf },
+    { name: "Ginecologia", icon: Heart },
+    { name: "Urologia", icon: Droplet },
+    { name: "Nutrição", icon: Apple },
+    { name: "Endocrinologia", icon: Brain },
+    { name: "Dermatologia", icon: Users },
+    { name: "Gastroenterologia", icon: Stethoscope },
+    { name: "Infertilidade Conjugal", icon: Baby },
+  ];
+
+  const therapies = [
+    { name: "Sauna", price: "15.000 Kz", description: "Desintoxicação, melhora da circulação, relaxamento profundo" },
+    { name: "Ventosaterapia", price: "25.000 Kz", description: "Aumento da circulação local, redução de dores musculares" },
+    { name: "Massoterapia", price: "15.000 Kz", description: "Relaxamento muscular, melhora da circulação linfática" },
+    { name: "Geoterapia", price: "15.000 Kz", description: "Desinflamação natural com argilas terapêuticas" },
+    { name: "Hidroterapia", price: "15.000 Kz", description: "Estimula circulação, aumenta imunidade" },
+    { name: "Hidroconterapia", price: "15.000 Kz", description: "Desintoxicação profunda do cólon" },
+    { name: "Lavagem Peniana", price: "Consultar", description: "Higiene e tratamento urológico especializado" },
+    { name: "Lavagem Uterina", price: "Consultar", description: "Limpeza terapêutica ginecológica" },
+    { name: "Aquecimento do Útero", price: "Consultar", description: "Terapia para saúde reprodutiva feminina" },
+    { name: "Alargamento do Útero", price: "Consultar", description: "Tratamento especializado ginecológico" },
+  ];
+
+  const analyses = [
+    "Colesterol HDL/LDL", "Urina I e II", "Espermograma", "Teste de Gravidez",
+    "Exudado Vaginal/Uretral", "Progesterona", "Testosterona", "Grupo Sanguíneo",
+    "Falciformação", "Glicemia", "Reação de Widal", "P.P", "HIV", "VDRL",
+    "PSA", "H. Pylori"
+  ];
+
+  const ultrasounds = [
+    "Ecografia Abdominal", "Ecografia Pélvica", "Ecografia Endovaginal",
+    "Ecografia Testicular", "Ecografia Mamária", "Ecografia Renal"
+  ];
+
+  const phytopharmacy = [
+    "Chás Medicinais", "Suplementos Naturais", "Cosméticos Naturais",
+    "Produtos de Higiene Naturais", "Alimentos Funcionais",
+    "Produtos para Ganho e Perda de Peso"
+  ];
+
+  const menDiseases = [
+    "Doenças Renais", "Cistite (inflamação da bexiga)", "Infecção Urinária (ITU/UTI)",
+    "Incontinência Urinária", "Uretrite", "Doenças da Próstata", "Disfunção Erétil",
+    "Ejaculação Precoce", "Varicocele", "Infertilidade Masculina"
+  ];
+
+  const womenDiseases = [
+    "Miomas", "Endometriose", "Câncer do Colo do Útero",
+    "Síndrome dos Ovários Policísticos (SOP)", "Vaginites (Candidíase, Vaginose Bacteriana)",
+    "Câncer e Cistos Mamários", "Dismenorreia (dor menstrual)",
+    "Amenorreia (ausência de menstruação)", "TPM Acentuada",
+    "Corrimento e Frigidez", "Infertilidade Feminina"
+  ];
+
+  const freeServices = [
+    "Prioridade para Idosos, Grávidas e Crianças",
+    "Medição de Peso",
+    "Medição de Pressão Arterial"
   ];
 
   return (
@@ -69,43 +81,152 @@ const Servicos = () => {
               Nossos Serviços
             </h1>
             <p className="text-xl text-white/90">
-              Oferecemos uma gama completa de serviços de saúde com qualidade, inovação e humanização
+              Tratamentos 100% naturais com excelência em saúde reprodutiva
             </p>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Services Tabs */}
       <section className="section-spacing">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Card key={index} className="card-hover border-border/50 shadow-soft">
+          <Tabs defaultValue="consultations" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-7 mb-12">
+              <TabsTrigger value="consultations">Consultas</TabsTrigger>
+              <TabsTrigger value="therapies">Terapias</TabsTrigger>
+              <TabsTrigger value="analyses">Análises</TabsTrigger>
+              <TabsTrigger value="ultrasounds">Ecografias</TabsTrigger>
+              <TabsTrigger value="phytopharmacy">Fitofarmácia</TabsTrigger>
+              <TabsTrigger value="diseases">Doenças Tratadas</TabsTrigger>
+              <TabsTrigger value="free">Grátis</TabsTrigger>
+            </TabsList>
+
+            {/* Consultations */}
+            <TabsContent value="consultations">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {consultations.map((consultation, index) => {
+                  const Icon = consultation.icon;
+                  return (
+                    <Card key={index} className="card-hover">
+                      <CardContent className="p-6 text-center">
+                        <Icon className="h-12 w-12 text-primary mx-auto mb-4" />
+                        <h3 className="font-semibold text-lg">{consultation.name}</h3>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
+              </div>
+            </TabsContent>
+
+            {/* Therapies */}
+            <TabsContent value="therapies">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {therapies.map((therapy, index) => (
+                  <Card key={index} className="card-hover">
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-start mb-3">
+                        <h3 className="font-semibold text-xl">{therapy.name}</h3>
+                        <span className="text-primary font-bold">{therapy.price}</span>
+                      </div>
+                      <p className="text-muted-foreground text-sm">{therapy.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Analyses */}
+            <TabsContent value="analyses">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {analyses.map((analysis, index) => (
+                  <Card key={index} className="card-hover">
+                    <CardContent className="p-4 text-center">
+                      <TestTube className="h-8 w-8 text-primary mx-auto mb-2" />
+                      <p className="text-sm font-medium">{analysis}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Ultrasounds */}
+            <TabsContent value="ultrasounds">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {ultrasounds.map((ultrasound, index) => (
+                  <Card key={index} className="card-hover">
+                    <CardContent className="p-6 text-center">
+                      <ScanLine className="h-12 w-12 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold">{ultrasound}</h3>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Phytopharmacy */}
+            <TabsContent value="phytopharmacy">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {phytopharmacy.map((item, index) => (
+                  <Card key={index} className="card-hover">
+                    <CardContent className="p-6 text-center">
+                      <Leaf className="h-12 w-12 text-primary mx-auto mb-3" />
+                      <h3 className="font-semibold">{item}</h3>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            {/* Diseases Treated */}
+            <TabsContent value="diseases">
+              <div className="grid md:grid-cols-2 gap-8">
+                <Card className="card-hover">
                   <CardContent className="p-8">
-                    <div className="flex items-start gap-4 mb-4">
-                      <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon className="h-7 w-7 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-poppins font-semibold mb-2">{service.title}</h3>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground mb-4">{service.description}</p>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm">
-                          <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span>
-                          {feature}
+                    <h3 className="text-2xl font-bold mb-6 text-primary">Doenças Urológicas (Homens)</h3>
+                    <ul className="space-y-3">
+                      {menDiseases.map((disease, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
+                          <span>{disease}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                 </Card>
-              );
-            })}
-          </div>
+                <Card className="card-hover">
+                  <CardContent className="p-8">
+                    <h3 className="text-2xl font-bold mb-6 text-primary">Doenças Ginecológicas (Mulheres)</h3>
+                    <ul className="space-y-3">
+                      {womenDiseases.map((disease, index) => (
+                        <li key={index} className="flex items-start">
+                          <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2"></span>
+                          <span>{disease}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+
+            {/* Free Services */}
+            <TabsContent value="free">
+              <Card className="card-hover max-w-2xl mx-auto">
+                <CardContent className="p-8">
+                  <Gift className="h-16 w-16 text-primary mx-auto mb-6" />
+                  <h3 className="text-2xl font-bold mb-6 text-center">Serviços Gratuitos</h3>
+                  <ul className="space-y-4">
+                    {freeServices.map((service, index) => (
+                      <li key={index} className="flex items-start text-lg">
+                        <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-3"></span>
+                        <span>{service}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
@@ -117,9 +238,12 @@ const Servicos = () => {
               Pronto para Cuidar da Sua Saúde?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Marque sua consulta hoje e experimente cuidados de saúde de excelência
+              Marque sua consulta hoje e experimente tratamentos 100% naturais
             </p>
-            <button className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-all hover:scale-105">
+            <button 
+              onClick={() => window.open('https://wa.me/244973003455', '_blank')}
+              className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-all hover:scale-105"
+            >
               Marcar Consulta Agora
             </button>
           </div>

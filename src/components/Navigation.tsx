@@ -24,8 +24,8 @@ const Navigation = () => {
       {/* Top Contact Bar */}
       <div className="bg-primary text-primary-foreground py-2 text-sm">
         <div className="container-custom flex flex-wrap items-center justify-center md:justify-end gap-4">
-          <a href="tel:+244926149661" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            📞 +244 926 149 661
+          <a href="tel:+244973003455" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            📞 973 003 455 / 957 600 902
           </a>
           <a href="mailto:quicepquicep@gmail.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             ✉️ quicepquicep@gmail.com

@@ -91,7 +91,7 @@ const Index = () => {
               Clínica QUICEP<br />Saúde Natural com Amor
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Cuidados integrais, tratamentos naturais e tecnologia ao serviço da sua saúde
+              Clínica de Saúde Reprodutiva — Tratamentos 100% naturais
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="text-lg">
@@ -102,7 +102,7 @@ const Index = () => {
                 size="lg" 
                 variant="outline" 
                 className="text-lg bg-white/10 border-white text-white hover:bg-white hover:text-primary"
-                onClick={() => window.open('https://wa.me/244926149661', '_blank')}
+                onClick={() => window.open('https://wa.me/244973003455', '_blank')}
               >
                 WhatsApp
               </Button>
@@ -256,10 +256,10 @@ const Index = () => {
                 Sobre a Clínica QUICEP
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Fundada em 2015, a Clínica QUICEP nasceu com a missão de proporcionar cuidados de saúde naturais e integrais à comunidade de Luanda.
+                Fundada com a missão de proporcionar cuidados de saúde reprodutiva naturais e integrais, a Clínica QUICEP é especializada em saúde feminina e masculina.
               </p>
               <p className="text-lg text-muted-foreground mb-8">
-                Combinamos tradição, conhecimento médico e inovação tecnológica para oferecer o melhor em saúde natural. Cada atendimento é feito com amor, dedicação e respeito.
+                Combinamos naturopatia, tratamentos naturais e tecnologia para oferecer o melhor em saúde reprodutiva. Cada atendimento é feito com amor, dedicação e respeito.
               </p>
               <Link to="/sobre">
                 <Button variant="default" size="lg">
