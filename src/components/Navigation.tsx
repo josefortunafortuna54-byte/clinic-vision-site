@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoQuicep from "@/assets/logo-quicep.jpg";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,12 +36,11 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">Q</span>
-            </div>
-            <span className="font-poppins font-bold text-lg md:text-xl text-foreground">
-              Clínica QUICEP
-            </span>
+            <img 
+              src={logoQuicep} 
+              alt="Clínica QUICEP Logo" 
+              className="h-12 md:h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
