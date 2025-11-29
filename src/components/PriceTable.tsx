@@ -91,12 +91,8 @@ const PriceTable = () => {
 
   const handleWhatsAppOrder = (productName: string) => {
     const message = `Olá! Gostaria de encomendar o produto: ${productName}`;
-    // Abrir WhatsApp com rel apropriado para evitar erro COOP
-    const whatsappLink = document.createElement('a');
-    whatsappLink.href = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
-    whatsappLink.target = '_blank';
-    whatsappLink.rel = 'noopener noreferrer';
-    whatsappLink.click();
+    // Abrir WhatsApp na mesma aba para evitar problemas de COOP em alguns navegadores
+    window.location.href = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
   };
 
   return (
@@ -135,7 +131,17 @@ const PriceTable = () => {
                 {filteredProducts.map((product) => (
                   <TableRow key={product.code} className="hover:bg-muted/50">
                     <TableCell className="font-medium">{product.code}</TableCell>
-                    <TableCell className="font-semibold">{product.description}</TableCell>
+                    <TableCell>
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 rounded-md bg-muted flex items-center justify-center text-xs font-semibold">
+                          {product.description.slice(0, 2)}
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="font-semibold">{product.description}</span>
+                          <span className="text-xs text-muted-foreground">Suplemento natural</span>
+                        </div>
+                      </div>
+                    </TableCell>
                     <TableCell className="text-right">{product.unitPrice}</TableCell>
                     <TableCell className="text-right text-accent font-semibold">{product.bulkPrice}</TableCell>
                     <TableCell className="text-right text-primary font-bold">{product.retailPrice}</TableCell>
