@@ -91,7 +91,12 @@ const PriceTable = () => {
 
   const handleWhatsAppOrder = (productName: string) => {
     const message = `Olá! Gostaria de encomendar o produto: ${productName}`;
-    window.open(`https://wa.me/244973003455?text=${encodeURIComponent(message)}`, '_blank');
+    // Abrir WhatsApp com rel apropriado para evitar erro COOP
+    const whatsappLink = document.createElement('a');
+    whatsappLink.href = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    whatsappLink.target = '_blank';
+    whatsappLink.rel = 'noopener noreferrer';
+    whatsappLink.click();
   };
 
   return (
