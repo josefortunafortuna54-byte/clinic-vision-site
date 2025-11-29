@@ -7,6 +7,8 @@ import { Card } from "@/components/ui/card";
 import AIChat from "@/components/AIChat";
 import AppointmentForm from "@/components/AppointmentForm";
 import TeleconsultInterface from "@/components/TeleconsultInterface";
+import InteractiveBodyMap from "@/components/InteractiveBodyMap";
+import PriceTable from "@/components/PriceTable";
 
 const Innovacoes = () => {
   const innovations = [
@@ -148,6 +150,28 @@ const Innovacoes = () => {
               
               <TeleconsultInterface />
             </div>
+          </div>
+        </section>
+
+        {/* Interactive Demo - Mapa de Saúde */}
+        <section className="section-spacing">
+          <div className="container-custom">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <Map className="h-16 w-16 text-primary mx-auto mb-4" />
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Mapa Interativo da Saúde</h2>
+                <p className="text-muted-foreground">Clique em partes do corpo para ver tratamentos e produtos recomendados</p>
+              </div>
+              
+              <InteractiveBodyMap />
+            </div>
+          </div>
+        </section>
+
+        {/* Price Table */}
+        <section className="section-spacing bg-muted/30">
+          <div className="container-custom">
+            <PriceTable />
           </div>
         </section>
 
