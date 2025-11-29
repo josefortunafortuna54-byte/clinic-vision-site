@@ -123,17 +123,41 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {innovations.map((innovation, index) => (
-              <Card key={index} className="card-hover text-center">
+            <Link to="/innovacoes#assistente-virtual">
+              <Card className="card-hover text-center h-full">
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <innovation.icon className="h-8 w-8 text-primary" />
+                    <Bot className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{innovation.title}</h3>
-                  <p className="text-muted-foreground">{innovation.description}</p>
+                  <h3 className="text-xl font-bold mb-2">Assistente Virtual IA</h3>
+                  <p className="text-muted-foreground">Chat inteligente disponível 24/7</p>
                 </CardContent>
               </Card>
-            ))}
+            </Link>
+            
+            <Link to="/innovacoes#agendamento">
+              <Card className="card-hover text-center h-full">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Agendamento Inteligente</h3>
+                  <p className="text-muted-foreground">Marque consultas online automaticamente</p>
+                </CardContent>
+              </Card>
+            </Link>
+            
+            <Link to="/innovacoes#teleconsulta">
+              <Card className="card-hover text-center h-full">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Video className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Teleconsulta Integrada</h3>
+                  <p className="text-muted-foreground">Consultas por vídeo seguras</p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
 
           <div className="text-center mt-12">

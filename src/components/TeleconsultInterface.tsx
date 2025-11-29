@@ -39,7 +39,12 @@ const TeleconsultInterface = () => {
       `*Tipo:* ${consultType}%0A` +
       `*Data/Hora:* ${new Date().toLocaleString('pt-BR')}`;
     
-    window.open(`https://wa.me/244973003455?text=${message}`, '_blank');
+    // Abrir WhatsApp com rel apropriado para evitar erro COOP
+    const whatsappLink = document.createElement('a');
+    whatsappLink.href = `https://wa.me/244973003455?text=${message}`;
+    whatsappLink.target = '_blank';
+    whatsappLink.rel = 'noopener noreferrer';
+    whatsappLink.click();
 
     toast({
       title: "Teleconsulta iniciada",

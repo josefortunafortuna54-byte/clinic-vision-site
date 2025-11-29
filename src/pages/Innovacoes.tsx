@@ -109,7 +109,7 @@ const Innovacoes = () => {
         </section>
 
         {/* Interactive Demo - Assistente Virtual */}
-        <section className="section-spacing bg-muted/30">
+        <section id="assistente-virtual" className="section-spacing bg-muted/30 scroll-mt-24">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
@@ -124,7 +124,7 @@ const Innovacoes = () => {
         </section>
 
         {/* Interactive Demo - Agendamento */}
-        <section className="section-spacing">
+        <section id="agendamento" className="section-spacing scroll-mt-24">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
@@ -139,7 +139,7 @@ const Innovacoes = () => {
         </section>
 
         {/* Interactive Demo - Teleconsulta */}
-        <section className="section-spacing bg-muted/30">
+        <section id="teleconsulta" className="section-spacing bg-muted/30 scroll-mt-24">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">

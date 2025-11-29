@@ -66,8 +66,12 @@ const AppointmentForm = () => {
       `*Horário:* ${formData.time}%0A` +
       `${formData.message ? `*Mensagem:* ${formData.message}` : ''}`;
 
-    // Abrir WhatsApp
-    window.open(`https://wa.me/244973003455?text=${message}`, '_blank');
+    // Abrir WhatsApp com rel apropriado para evitar erro COOP
+    const whatsappLink = document.createElement('a');
+    whatsappLink.href = `https://wa.me/244973003455?text=${message}`;
+    whatsappLink.target = '_blank';
+    whatsappLink.rel = 'noopener noreferrer';
+    whatsappLink.click();
 
     toast({
       title: "Agendamento enviado!",
