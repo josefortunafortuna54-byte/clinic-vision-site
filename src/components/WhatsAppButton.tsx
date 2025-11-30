@@ -12,32 +12,32 @@ const WhatsAppButton = () => {
 
   const predefinedMessages = [
     {
-      label: "Informações Gerais",
-      message: "Olá! Gostaria de mais informações sobre os serviços da Clínica QUICEP.",
+      label: "Profissional",
+      message: "Olá, gostaria de receber mais informações sobre os serviços da Clínica Quicep.",
+    },
+    {
+      label: "Curta",
+      message: "Olá, quero informações da Clínica Quicep.",
     },
     {
       label: "Agendamento",
-      message: "Bom dia! Gostaria de agendar uma consulta na Clínica QUICEP. Qual a disponibilidade?",
+      message: "Olá, gostaria de agendar um atendimento na Clínica Quicep.",
     },
     {
       label: "Orçamento",
-      message: "Olá! Poderia fornecer um orçamento para os vossos serviços? Obrigado.",
+      message: "Olá, gostaria de solicitar um orçamento da Clínica Quicep.",
     },
     {
-      label: "Novo Cliente",
-      message: "Olá! Sou novo cliente e gostaria de saber mais sobre os vossos serviços de saúde reprodutiva.",
+      label: "Primeiro Contato",
+      message: "Olá, é a minha primeira vez a contactar a Clínica Quicep. Podem informar como funciona o atendimento?",
     },
     {
       label: "Cliente Antigo",
-      message: "Olá! Sou cliente da clínica e gostaria de marcar uma nova consulta.",
+      message: "Olá, já fui atendido na Clínica Quicep e gostaria de marcar um novo serviço.",
     },
     {
-      label: "Consulta Urgente",
-      message: "Bom dia! Preciso de uma consulta urgente. Há disponibilidade hoje?",
-    },
-    {
-      label: "Produtos Naturais",
-      message: "Olá! Gostaria de informações sobre os produtos naturais disponíveis na clínica.",
+      label: "Formal",
+      message: "Boa tarde, poderia fornecer informações sobre os serviços disponíveis na Clínica Quicep?",
     },
   ];
 
