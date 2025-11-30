@@ -39,7 +39,7 @@ const Navigation = () => {
             <img 
               src={logoQuicep} 
               alt="Clínica QUICEP Logo" 
-              className="h-20 md:h-24 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </Link>
 
