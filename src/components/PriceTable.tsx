@@ -91,8 +91,8 @@ const PriceTable = () => {
 
   const handleWhatsAppOrder = (productName: string) => {
     const message = `Olá! Gostaria de encomendar o produto: ${productName}`;
-    // Abrir WhatsApp na mesma aba para evitar problemas de COOP em alguns navegadores
-    window.location.href = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener");
   };
 
   return (

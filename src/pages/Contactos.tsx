@@ -65,7 +65,7 @@ const Contactos = () => {
                 <Button 
                   size="sm" 
                   variant="outline"
-                  onClick={() => window.open('https://wa.me/244973003455', '_blank')}
+                  onClick={() => window.open('https://wa.me/244973003455', '_blank', 'noopener')}
                 >
                   Abrir WhatsApp
                 </Button>
@@ -168,7 +168,7 @@ const Contactos = () => {
               size="lg" 
               variant="secondary" 
               className="text-lg px-8"
-              onClick={() => window.open('https://wa.me/244973003455', '_blank')}
+              onClick={() => window.open('https://wa.me/244973003455', '_blank', 'noopener')}
             >
               Contactar via WhatsApp
             </Button>

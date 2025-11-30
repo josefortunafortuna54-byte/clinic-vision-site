@@ -63,8 +63,8 @@ const InteractiveBodyMap = () => {
 
   const handleWhatsAppInquiry = (product: string) => {
     const message = `Olá! Gostaria de saber mais sobre o produto: ${product}`;
-    // Abrir WhatsApp na mesma aba para evitar problemas de COOP em alguns navegadores
-    window.location.href = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener");
   };
 
   return (
@@ -225,7 +225,8 @@ const InteractiveBodyMap = () => {
                 className="w-full" 
                 onClick={() => {
                   const message = 'Gostaria de marcar uma consulta';
-                  window.location.href = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+                  const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+                  window.open(url, "_blank", "noopener");
                 }}
               >
                 Marcar Consulta para Avaliação

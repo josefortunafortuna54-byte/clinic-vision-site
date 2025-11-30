@@ -66,9 +66,8 @@ const AppointmentForm = () => {
       `*Horário:* ${formData.time}%0A` +
       `${formData.message ? `*Mensagem:* ${formData.message}` : ''}`;
 
-    // Abrir WhatsApp na mesma aba para evitar problemas de COOP em alguns navegadores
-    window.location.href = `https://wa.me/244973003455?text=${message}`;
-
+    const url = `https://wa.me/244973003455?text=${message}`;
+    window.open(url, "_blank", "noopener");
     toast({
       title: "Agendamento enviado!",
       description: "Entraremos em contacto em breve para confirmar.",
