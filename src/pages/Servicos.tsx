@@ -241,7 +241,7 @@ const Servicos = () => {
               Marque sua consulta hoje e experimente tratamentos 100% naturais
             </p>
             <button 
-              onClick={() => window.open('https://wa.me/244973003455', '_blank')}
+              onClick={() => window.open('https://wa.me/244973003455', '_blank', 'noopener')}
               className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-all hover:scale-105"
             >
               Marcar Consulta Agora

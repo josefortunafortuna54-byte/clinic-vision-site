@@ -98,8 +98,8 @@ const Produtos = () => {
 
   const handleWhatsAppOrder = (productName: string) => {
     const message = `Olá! Gostaria de saber mais sobre o produto: ${productName}`;
-    // Abrir WhatsApp na mesma aba para evitar problemas de COOP em alguns navegadores
-    window.location.href = `https://wa.me/244926149661?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank", "noopener");
   };
   return (
     <div className="min-h-screen flex flex-col">

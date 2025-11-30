@@ -39,8 +39,9 @@ const TeleconsultInterface = () => {
       `*Tipo:* ${consultType}%0A` +
       `*Data/Hora:* ${new Date().toLocaleString('pt-BR')}`;
 
-    // Abrir WhatsApp na mesma aba para evitar problemas de COOP em alguns navegadores
-    window.location.href = `https://wa.me/244973003455?text=${message}`;
+    const url = `https://wa.me/244973003455?text=${message}`;
+
+    window.open(url, "_blank", "noopener");
 
     toast({
       title: "Teleconsulta iniciada",

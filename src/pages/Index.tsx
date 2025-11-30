@@ -102,7 +102,7 @@ const Index = () => {
                 size="lg" 
                 variant="outline" 
                 className="text-lg bg-white/10 border-white text-white hover:bg-white hover:text-primary"
-                onClick={() => window.open('https://wa.me/244973003455', '_blank')}
+                onClick={() => window.open('https://wa.me/244973003455', '_blank', 'noopener')}
               >
                 WhatsApp
               </Button>
