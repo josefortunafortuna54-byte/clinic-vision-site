@@ -67,7 +67,13 @@ const AppointmentForm = () => {
       `${formData.message ? `*Mensagem:* ${formData.message}` : ''}`;
 
     const url = `https://wa.me/244973003455?text=${message}`;
-    window.open(url, "_blank", "noopener");
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     toast({
       title: "Agendamento enviado!",
       description: "Entraremos em contacto em breve para confirmar.",

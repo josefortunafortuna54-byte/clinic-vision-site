@@ -63,10 +63,19 @@ const Contactos = () => {
                   </a>
                 </div>
                 <Button 
-                  size="sm" 
-                  variant="outline"
-                  onClick={() => window.open('https://wa.me/244973003455', '_blank', 'noopener')}
-                >
+                   size="sm" 
+                   variant="outline"
+                   onClick={() => {
+                     const url = 'https://wa.me/244973003455';
+                     const link = document.createElement("a");
+                     link.href = url;
+                     link.target = "_blank";
+                     link.rel = "noopener noreferrer";
+                     document.body.appendChild(link);
+                     link.click();
+                     document.body.removeChild(link);
+                   }}
+                 >
                   Abrir WhatsApp
                 </Button>
               </Card>
@@ -165,11 +174,20 @@ const Contactos = () => {
               Entre em contacto via WhatsApp para agendamento rápido e fácil.
             </p>
             <Button 
-              size="lg" 
-              variant="secondary" 
-              className="text-lg px-8"
-              onClick={() => window.open('https://wa.me/244973003455', '_blank', 'noopener')}
-            >
+               size="lg" 
+               variant="secondary" 
+               className="text-lg px-8"
+               onClick={() => {
+                 const url = 'https://wa.me/244973003455';
+                 const link = document.createElement("a");
+                 link.href = url;
+                 link.target = "_blank";
+                 link.rel = "noopener noreferrer";
+                 document.body.appendChild(link);
+                 link.click();
+                 document.body.removeChild(link);
+               }}
+             >
               Contactar via WhatsApp
             </Button>
           </div>

@@ -241,9 +241,18 @@ const Servicos = () => {
               Marque sua consulta hoje e experimente tratamentos 100% naturais
             </p>
             <button 
-              onClick={() => window.open('https://wa.me/244973003455', '_blank', 'noopener')}
-              className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-all hover:scale-105"
-            >
+               onClick={() => {
+                 const url = 'https://wa.me/244973003455';
+                 const link = document.createElement("a");
+                 link.href = url;
+                 link.target = "_blank";
+                 link.rel = "noopener noreferrer";
+                 document.body.appendChild(link);
+                 link.click();
+                 document.body.removeChild(link);
+               }}
+               className="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-white/90 transition-all hover:scale-105"
+             >
               Marcar Consulta Agora
             </button>
           </div>

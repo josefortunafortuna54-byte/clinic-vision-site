@@ -64,7 +64,13 @@ const InteractiveBodyMap = () => {
   const handleWhatsAppInquiry = (product: string) => {
     const message = `Olá! Gostaria de saber mais sobre o produto: ${product}`;
     const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank", "noopener");
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -226,7 +232,13 @@ const InteractiveBodyMap = () => {
                 onClick={() => {
                   const message = 'Gostaria de marcar uma consulta';
                   const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
-                  window.open(url, "_blank", "noopener");
+                  const link = document.createElement("a");
+                  link.href = url;
+                  link.target = "_blank";
+                  link.rel = "noopener noreferrer";
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
                 }}
               >
                 Marcar Consulta para Avaliação
