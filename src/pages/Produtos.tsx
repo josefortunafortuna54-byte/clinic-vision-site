@@ -99,7 +99,13 @@ const Produtos = () => {
   const handleWhatsAppOrder = (productName: string) => {
     const message = `Olá! Gostaria de saber mais sobre o produto: ${productName}`;
     const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank", "noopener");
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   return (
     <div className="min-h-screen flex flex-col">

@@ -99,11 +99,20 @@ const Index = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
-                size="lg" 
-                variant="outline" 
-                className="text-lg bg-white/10 border-white text-white hover:bg-white hover:text-primary"
-                onClick={() => window.open('https://wa.me/244973003455', '_blank', 'noopener')}
-              >
+                 size="lg" 
+                 variant="outline" 
+                 className="text-lg bg-white/10 border-white text-white hover:bg-white hover:text-primary"
+                 onClick={() => {
+                   const url = 'https://wa.me/244973003455';
+                   const link = document.createElement("a");
+                   link.href = url;
+                   link.target = "_blank";
+                   link.rel = "noopener noreferrer";
+                   document.body.appendChild(link);
+                   link.click();
+                   document.body.removeChild(link);
+                 }}
+               >
                 WhatsApp
               </Button>
             </div>
