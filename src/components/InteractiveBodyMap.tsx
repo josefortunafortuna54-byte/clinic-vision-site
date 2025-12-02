@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { ShoppingCart } from "lucide-react";
+import humanBodyImg from "@/assets/human-body-map.png";
 
 interface BodyPart {
   id: string;
@@ -73,6 +74,15 @@ const InteractiveBodyMap = () => {
     document.body.removeChild(link);
   };
 
+  const hotspots = [
+    { id: 'head', top: '5%', left: '50%', label: 'Cabeça' },
+    { id: 'chest', top: '25%', left: '50%', label: 'Peito' },
+    { id: 'abdomen', top: '38%', left: '50%', label: 'Abdómen' },
+    { id: 'reproductive', top: '50%', left: '50%', label: 'Reprodutivo' },
+    { id: 'joints', top: '28%', left: '22%', label: 'Articulações' },
+    { id: 'urinary', top: '45%', left: '50%', label: 'Urinário' },
+  ];
+
   return (
     <div className="w-full">
       <Card className="p-8">
@@ -81,108 +91,60 @@ const InteractiveBodyMap = () => {
           <p className="text-muted-foreground">Descubra tratamentos e produtos recomendados</p>
         </div>
 
-        {/* Interactive Body Diagram */}
-        <div className="relative mx-auto max-w-md aspect-[3/4] bg-gradient-to-b from-muted/20 to-muted/40 rounded-3xl p-8">
-          <svg viewBox="0 0 300 500" className="w-full h-full">
-            {/* Head */}
-            <ellipse
-              cx="150"
-              cy="60"
-              rx="50"
-              ry="60"
-              className={`cursor-pointer transition-all duration-300 ${
-                hoveredPart === 'head' ? 'fill-primary/70' : 'fill-primary/30'
-              } hover:fill-primary/70 stroke-primary stroke-2`}
-              onClick={() => setSelectedPart(bodyParts.head)}
-              onMouseEnter={() => setHoveredPart('head')}
+        {/* Interactive Body Map with Real Image */}
+        <div className="relative mx-auto max-w-md">
+          <img 
+            src={humanBodyImg} 
+            alt="Mapa interativo do corpo humano" 
+            className="w-full h-auto rounded-2xl"
+          />
+          
+          {/* Interactive Hotspots */}
+          {hotspots.map((spot) => (
+            <button
+              key={spot.id}
+              className={`absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border-2 transition-all duration-300 flex items-center justify-center group ${
+                hoveredPart === spot.id 
+                  ? 'bg-primary/80 border-primary scale-125 shadow-lg shadow-primary/30' 
+                  : 'bg-primary/40 border-primary/60 hover:bg-primary/70 hover:scale-110'
+              }`}
+              style={{ top: spot.top, left: spot.left }}
+              onClick={() => setSelectedPart(bodyParts[spot.id])}
+              onMouseEnter={() => setHoveredPart(spot.id)}
               onMouseLeave={() => setHoveredPart(null)}
-            />
-            
-            {/* Chest */}
-            <rect
-              x="100"
-              y="120"
-              width="100"
-              height="80"
-              rx="20"
-              className={`cursor-pointer transition-all duration-300 ${
-                hoveredPart === 'chest' ? 'fill-accent/70' : 'fill-accent/30'
-              } hover:fill-accent/70 stroke-accent stroke-2`}
-              onClick={() => setSelectedPart(bodyParts.chest)}
-              onMouseEnter={() => setHoveredPart('chest')}
-              onMouseLeave={() => setHoveredPart(null)}
-            />
-            
-            {/* Abdomen */}
-            <rect
-              x="110"
-              y="200"
-              width="80"
-              height="70"
-              rx="15"
-              className={`cursor-pointer transition-all duration-300 ${
-                hoveredPart === 'abdomen' ? 'fill-secondary/70' : 'fill-secondary/30'
-              } hover:fill-secondary/70 stroke-secondary stroke-2`}
-              onClick={() => setSelectedPart(bodyParts.abdomen)}
-              onMouseEnter={() => setHoveredPart('abdomen')}
-              onMouseLeave={() => setHoveredPart(null)}
-            />
-            
-            {/* Reproductive System */}
-            <ellipse
-              cx="150"
-              cy="310"
-              rx="40"
-              ry="30"
-              className={`cursor-pointer transition-all duration-300 ${
-                hoveredPart === 'reproductive' ? 'fill-primary/70' : 'fill-primary/30'
-              } hover:fill-primary/70 stroke-primary stroke-2`}
-              onClick={() => setSelectedPart(bodyParts.reproductive)}
-              onMouseEnter={() => setHoveredPart('reproductive')}
-              onMouseLeave={() => setHoveredPart(null)}
-            />
-            
-            {/* Joints - Left Arm */}
-            <circle
-              cx="70"
-              cy="160"
-              r="20"
-              className={`cursor-pointer transition-all duration-300 ${
-                hoveredPart === 'joints' ? 'fill-accent/70' : 'fill-accent/30'
-              } hover:fill-accent/70 stroke-accent stroke-2`}
-              onClick={() => setSelectedPart(bodyParts.joints)}
-              onMouseEnter={() => setHoveredPart('joints')}
-              onMouseLeave={() => setHoveredPart(null)}
-            />
-            
-            {/* Joints - Right Arm */}
-            <circle
-              cx="230"
-              cy="160"
-              r="20"
-              className={`cursor-pointer transition-all duration-300 ${
-                hoveredPart === 'joints' ? 'fill-accent/70' : 'fill-accent/30'
-              } hover:fill-accent/70 stroke-accent stroke-2`}
-              onClick={() => setSelectedPart(bodyParts.joints)}
-              onMouseEnter={() => setHoveredPart('joints')}
-              onMouseLeave={() => setHoveredPart(null)}
-            />
-            
-            {/* Urinary System */}
-            <ellipse
-              cx="150"
-              cy="280"
-              rx="35"
-              ry="25"
-              className={`cursor-pointer transition-all duration-300 ${
-                hoveredPart === 'urinary' ? 'fill-secondary/70' : 'fill-secondary/30'
-              } hover:fill-secondary/70 stroke-secondary stroke-2`}
-              onClick={() => setSelectedPart(bodyParts.urinary)}
-              onMouseEnter={() => setHoveredPart('urinary')}
-              onMouseLeave={() => setHoveredPart(null)}
-            />
-          </svg>
+              aria-label={`Ver tratamentos para ${spot.label}`}
+            >
+              <span className="w-3 h-3 bg-white rounded-full animate-pulse" />
+              
+              {/* Tooltip */}
+              <span className={`absolute whitespace-nowrap bg-primary text-primary-foreground text-xs px-2 py-1 rounded transition-all duration-200 ${
+                spot.left === '22%' ? 'left-full ml-2' : 'bottom-full mb-2'
+              } ${hoveredPart === spot.id ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                {spot.label}
+              </span>
+            </button>
+          ))}
+
+          {/* Right side joint hotspot */}
+          <button
+            className={`absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border-2 transition-all duration-300 flex items-center justify-center group ${
+              hoveredPart === 'joints' 
+                ? 'bg-primary/80 border-primary scale-125 shadow-lg shadow-primary/30' 
+                : 'bg-primary/40 border-primary/60 hover:bg-primary/70 hover:scale-110'
+            }`}
+            style={{ top: '28%', left: '78%' }}
+            onClick={() => setSelectedPart(bodyParts.joints)}
+            onMouseEnter={() => setHoveredPart('joints')}
+            onMouseLeave={() => setHoveredPart(null)}
+            aria-label="Ver tratamentos para Articulações"
+          >
+            <span className="w-3 h-3 bg-white rounded-full animate-pulse" />
+          </button>
         </div>
+
+        <p className="text-center text-sm text-muted-foreground mt-6">
+          Toque nos pontos iluminados para ver os tratamentos disponíveis
+        </p>
       </Card>
 
       {/* Details Modal */}
