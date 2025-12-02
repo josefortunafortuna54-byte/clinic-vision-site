@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Search, ShoppingCart, Info } from "lucide-react";
+import { Search, ShoppingCart, Info, TableIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import zainHormoneImg from "@/assets/zain-hormone.jpg";
+import pidSyrupImg from "@/assets/pid-syrup.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -31,7 +33,7 @@ const Produtos = () => {
       category: "Saúde Reprodutiva",
       description: "Tratamento herbal para inflamações pélvicas.",
       longDescription: "P.I.D Syrup é um xarope herbal formulado para ajudar no tratamento natural de inflamações pélvicas. Com propriedades anti-inflamatórias e antimicrobianas naturais.",
-      image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=400&fit=crop",
+      image: pidSyrupImg,
       price: "—"
     },
     {
@@ -120,9 +122,15 @@ const Produtos = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Produtos Naturais
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in">
+            <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in mb-6">
               Suplementos e produtos naturais de alta qualidade para o seu bem-estar
             </p>
+            <Link to="/precario">
+              <Button variant="secondary" size="lg" className="animate-fade-in">
+                <TableIcon className="h-5 w-5 mr-2" />
+                Ver Tabela de Preçário
+              </Button>
+            </Link>
           </div>
         </section>
 
