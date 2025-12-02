@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Search, ShoppingCart, Info } from "lucide-react";
+import zainHormoneImg from "@/assets/zain-hormone.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -39,7 +40,7 @@ const Produtos = () => {
       category: "Saúde Reprodutiva",
       description: "Regulação natural de hormonas femininas.",
       longDescription: "ZAIN Hormone Imbalance é uma formulação natural que ajuda a regular o equilíbrio hormonal feminino, aliviando sintomas de desequilíbrio hormonal e promovendo bem-estar geral.",
-      image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=400&fit=crop",
+      image: zainHormoneImg,
       price: "—"
     },
     {
