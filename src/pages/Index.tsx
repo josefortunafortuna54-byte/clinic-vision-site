@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Stethoscope, Pill, Video, Microscope, Leaf, Users, Bot, Calendar, Sparkles } from "lucide-react";
+import pidSyrupImg from "@/assets/pid-syrup.jpg";
+import zainHormoneImg from "@/assets/zain-hormone.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -231,40 +233,46 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="overflow-hidden card-hover">
               <img 
-                src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop" 
-                alt="Marion 4 Woman"
-                className="w-full h-48 object-cover"
-              />
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Marion 4 Woman</h3>
-                <p className="text-sm text-muted-foreground mb-4">Saúde reprodutiva feminina</p>
-                <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden card-hover">
-              <img 
-                src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=400&h=300&fit=crop" 
+                src={pidSyrupImg} 
                 alt="P.I.D Syrup"
                 className="w-full h-48 object-cover"
               />
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">P.I.D Syrup</h3>
                 <p className="text-sm text-muted-foreground mb-4">Tratamento herbal natural</p>
-                <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
+                <Link to="/produtos">
+                  <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
+                </Link>
               </CardContent>
             </Card>
 
             <Card className="overflow-hidden card-hover">
               <img 
-                src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400&h=300&fit=crop" 
+                src={zainHormoneImg} 
                 alt="ZAIN Hormone Imbalance"
                 className="w-full h-48 object-cover"
               />
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">ZAIN Hormone</h3>
                 <p className="text-sm text-muted-foreground mb-4">Equilíbrio hormonal feminino</p>
-                <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
+                <Link to="/produtos">
+                  <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden card-hover">
+              <img 
+                src={pidSyrupImg} 
+                alt="Marion 4 Woman"
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-2">Marion 4 Woman</h3>
+                <p className="text-sm text-muted-foreground mb-4">Saúde reprodutiva feminina</p>
+                <Link to="/produtos">
+                  <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
+                </Link>
               </CardContent>
             </Card>
           </div>

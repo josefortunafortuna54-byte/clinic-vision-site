@@ -75,12 +75,12 @@ const InteractiveBodyMap = () => {
   };
 
   const hotspots = [
-    { id: 'head', top: '5%', left: '50%', label: 'Cabeça' },
-    { id: 'chest', top: '25%', left: '50%', label: 'Peito' },
-    { id: 'abdomen', top: '38%', left: '50%', label: 'Abdómen' },
-    { id: 'reproductive', top: '50%', left: '50%', label: 'Reprodutivo' },
-    { id: 'joints', top: '28%', left: '22%', label: 'Articulações' },
-    { id: 'urinary', top: '45%', left: '50%', label: 'Urinário' },
+    { id: 'head', top: '8%', left: '50%', label: 'Cabeça' },
+    { id: 'chest', top: '28%', left: '50%', label: 'Peito' },
+    { id: 'abdomen', top: '42%', left: '50%', label: 'Abdómen' },
+    { id: 'reproductive', top: '52%', left: '50%', label: 'Reprodutivo' },
+    { id: 'joints', top: '30%', left: '18%', label: 'Articulações' },
+    { id: 'urinary', top: '48%', left: '42%', label: 'Urinário' },
   ];
 
   return (
@@ -92,7 +92,7 @@ const InteractiveBodyMap = () => {
         </div>
 
         {/* Interactive Body Map with Real Image */}
-        <div className="relative mx-auto max-w-md">
+        <div className="relative mx-auto max-w-lg">
           <img 
             src={humanBodyImg} 
             alt="Mapa interativo do corpo humano" 
@@ -100,26 +100,32 @@ const InteractiveBodyMap = () => {
           />
           
           {/* Interactive Hotspots */}
-          {hotspots.map((spot) => (
+          {hotspots.map((spot, index) => (
             <button
               key={spot.id}
-              className={`absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border-2 transition-all duration-300 flex items-center justify-center group ${
+              className={`absolute transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-3 transition-all duration-300 flex items-center justify-center group ${
                 hoveredPart === spot.id 
-                  ? 'bg-primary/80 border-primary scale-125 shadow-lg shadow-primary/30' 
-                  : 'bg-primary/40 border-primary/60 hover:bg-primary/70 hover:scale-110'
+                  ? 'bg-primary/90 border-primary scale-130 shadow-xl shadow-primary/40' 
+                  : 'bg-primary/50 border-primary/70 hover:bg-primary/80 hover:scale-115'
               }`}
-              style={{ top: spot.top, left: spot.left }}
+              style={{ 
+                top: spot.top, 
+                left: spot.left,
+                animation: `pulse-ring 2s ease-in-out infinite`,
+                animationDelay: `${index * 0.3}s`
+              }}
               onClick={() => setSelectedPart(bodyParts[spot.id])}
               onMouseEnter={() => setHoveredPart(spot.id)}
               onMouseLeave={() => setHoveredPart(null)}
               aria-label={`Ver tratamentos para ${spot.label}`}
             >
-              <span className="w-3 h-3 bg-white rounded-full animate-pulse" />
+              <span className="w-4 h-4 bg-white rounded-full animate-ping absolute" />
+              <span className="w-3 h-3 bg-white rounded-full relative z-10" />
               
               {/* Tooltip */}
-              <span className={`absolute whitespace-nowrap bg-primary text-primary-foreground text-xs px-2 py-1 rounded transition-all duration-200 ${
-                spot.left === '22%' ? 'left-full ml-2' : 'bottom-full mb-2'
-              } ${hoveredPart === spot.id ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+              <span className={`absolute whitespace-nowrap bg-primary text-primary-foreground text-sm font-medium px-3 py-1.5 rounded-lg shadow-lg transition-all duration-200 ${
+                spot.left === '18%' ? 'left-full ml-3' : 'bottom-full mb-3'
+              } ${hoveredPart === spot.id ? 'opacity-100 visible scale-100' : 'opacity-0 invisible scale-90'}`}>
                 {spot.label}
               </span>
             </button>
@@ -127,20 +133,62 @@ const InteractiveBodyMap = () => {
 
           {/* Right side joint hotspot */}
           <button
-            className={`absolute transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full border-2 transition-all duration-300 flex items-center justify-center group ${
-              hoveredPart === 'joints' 
-                ? 'bg-primary/80 border-primary scale-125 shadow-lg shadow-primary/30' 
-                : 'bg-primary/40 border-primary/60 hover:bg-primary/70 hover:scale-110'
+            className={`absolute transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-3 transition-all duration-300 flex items-center justify-center group ${
+              hoveredPart === 'joints-right' 
+                ? 'bg-primary/90 border-primary scale-130 shadow-xl shadow-primary/40' 
+                : 'bg-primary/50 border-primary/70 hover:bg-primary/80 hover:scale-115'
             }`}
-            style={{ top: '28%', left: '78%' }}
+            style={{ 
+              top: '30%', 
+              left: '82%',
+              animation: `pulse-ring 2s ease-in-out infinite`,
+              animationDelay: '1.8s'
+            }}
             onClick={() => setSelectedPart(bodyParts.joints)}
-            onMouseEnter={() => setHoveredPart('joints')}
+            onMouseEnter={() => setHoveredPart('joints-right')}
             onMouseLeave={() => setHoveredPart(null)}
             aria-label="Ver tratamentos para Articulações"
           >
-            <span className="w-3 h-3 bg-white rounded-full animate-pulse" />
+            <span className="w-4 h-4 bg-white rounded-full animate-ping absolute" />
+            <span className="w-3 h-3 bg-white rounded-full relative z-10" />
+          </button>
+
+          {/* Legs hotspot */}
+          <button
+            className={`absolute transform -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-3 transition-all duration-300 flex items-center justify-center group ${
+              hoveredPart === 'legs' 
+                ? 'bg-primary/90 border-primary scale-130 shadow-xl shadow-primary/40' 
+                : 'bg-primary/50 border-primary/70 hover:bg-primary/80 hover:scale-115'
+            }`}
+            style={{ 
+              top: '72%', 
+              left: '50%',
+              animation: `pulse-ring 2s ease-in-out infinite`,
+              animationDelay: '2.1s'
+            }}
+            onClick={() => setSelectedPart(bodyParts.joints)}
+            onMouseEnter={() => setHoveredPart('legs')}
+            onMouseLeave={() => setHoveredPart(null)}
+            aria-label="Ver tratamentos para Pernas"
+          >
+            <span className="w-4 h-4 bg-white rounded-full animate-ping absolute" />
+            <span className="w-3 h-3 bg-white rounded-full relative z-10" />
+            <span className={`absolute whitespace-nowrap bg-primary text-primary-foreground text-sm font-medium px-3 py-1.5 rounded-lg shadow-lg transition-all duration-200 bottom-full mb-3 ${hoveredPart === 'legs' ? 'opacity-100 visible scale-100' : 'opacity-0 invisible scale-90'}`}>
+              Pernas
+            </span>
           </button>
         </div>
+        
+        <style>{`
+          @keyframes pulse-ring {
+            0%, 100% {
+              box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+            }
+            50% {
+              box-shadow: 0 0 0 12px hsl(var(--primary) / 0);
+            }
+          }
+        `}</style>
 
         <p className="text-center text-sm text-muted-foreground mt-6">
           Toque nos pontos iluminados para ver os tratamentos disponíveis
