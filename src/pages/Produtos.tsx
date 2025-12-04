@@ -3,6 +3,12 @@ import { Search, ShoppingCart, Info, TableIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import zainHormoneImg from "@/assets/zain-hormone.jpg";
 import pidSyrupImg from "@/assets/pid-syrup.jpg";
+import marion4WomanImg from "@/assets/marion-4-woman.jpg";
+import energyPlusImg from "@/assets/energy-plus.jpg";
+import cardioHealthImg from "@/assets/cardio-health.jpg";
+import glowSkinImg from "@/assets/glow-skin.jpg";
+import digestEaseImg from "@/assets/digest-ease.jpg";
+import immuneBoostImg from "@/assets/immune-boost.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -24,7 +30,7 @@ const Produtos = () => {
       category: "Saúde Reprodutiva",
       description: "Suplemento natural para saúde reprodutiva feminina.",
       longDescription: "Marion 4 Woman é uma fórmula completa desenvolvida especialmente para apoiar a saúde reprodutiva e hormonal feminina. Contém ingredientes naturais que ajudam a equilibrar o ciclo menstrual, reduzir cólicas e promover o bem-estar geral.",
-      image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=400&fit=crop",
+      image: marion4WomanImg,
       price: "—"
     },
     {
@@ -51,7 +57,7 @@ const Produtos = () => {
       category: "Energia & Vitalidade",
       description: "Suplemento energético natural para combater fadiga.",
       longDescription: "Energy Plus combina vitaminas do complexo B, ginseng e guaraná para fornecer energia sustentada ao longo do dia.",
-      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=400&fit=crop",
+      image: energyPlusImg,
       price: "—"
     },
     {
@@ -60,7 +66,7 @@ const Produtos = () => {
       category: "Cardiovascular",
       description: "Suporte natural para saúde cardiovascular.",
       longDescription: "CardioHealth contém ômega-3, CoQ10 e antioxidantes para apoiar a saúde do coração e circulação sanguínea.",
-      image: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=400&fit=crop",
+      image: cardioHealthImg,
       price: "—"
     },
     {
@@ -69,7 +75,7 @@ const Produtos = () => {
       category: "Beleza",
       description: "Suplemento para pele, cabelo e unhas saudáveis.",
       longDescription: "GlowSkin oferece colágeno, biotina e vitaminas essenciais para promover beleza de dentro para fora.",
-      image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&h=400&fit=crop",
+      image: glowSkinImg,
       price: "—"
     },
     {
@@ -78,7 +84,7 @@ const Produtos = () => {
       category: "Digestão",
       description: "Apoio natural para digestão saudável.",
       longDescription: "DigestEase combina enzimas digestivas e probióticos para melhorar a digestão e saúde intestinal.",
-      image: "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400&h=400&fit=crop",
+      image: digestEaseImg,
       price: "—"
     },
     {
@@ -87,7 +93,7 @@ const Produtos = () => {
       category: "Imunidade",
       description: "Fortalecimento natural do sistema imunológico.",
       longDescription: "ImmuneBoost contém vitamina C, zinco, equinácea e própolis para fortalecer as defesas naturais do corpo.",
-      image: "https://images.unsplash.com/photo-1550572017-4840134d9e27?w=400&h=400&fit=crop",
+      image: immuneBoostImg,
       price: "—"
     }
   ];
