@@ -17,6 +17,64 @@ import loveKingdomImg from "@/assets/love-kingdom.jpg";
 import coldSyrupImg from "@/assets/cold-syrup.jpg";
 import prostateCareImg from "@/assets/prostate-care.jpg";
 import fertilityPlusImg from "@/assets/fertility-plus.jpg";
+import yaBongoImg from "@/assets/ya-bongo.jpg";
+import kidneyCareImg from "@/assets/kidney-care.jpg";
+import liverDetoxImg from "@/assets/liver-detox.jpg";
+import bloodPressureImg from "@/assets/blood-pressure.jpg";
+import diabetesControlImg from "@/assets/diabetes-control.jpg";
+import jointReliefImg from "@/assets/joint-relief.jpg";
+import stressReliefImg from "@/assets/stress-relief.jpg";
+import sleepAidImg from "@/assets/sleep-aid.jpg";
+import weightLossImg from "@/assets/weight-loss.jpg";
+import menopauseReliefImg from "@/assets/menopause-relief.jpg";
+import eyeHealthImg from "@/assets/eye-health.jpg";
+import boneHealthImg from "@/assets/bone-health.jpg";
+import hairGrowthImg from "@/assets/hair-growth.jpg";
+import utiCareImg from "@/assets/uti-care.jpg";
+import testosteroneBoostImg from "@/assets/testosterone-boost.jpg";
+import libidoPlusImg from "@/assets/libido-plus.jpg";
+import multivitaminImg from "@/assets/multivitamin.jpg";
+import antiAgingImg from "@/assets/anti-aging.jpg";
+import prenatalCareImg from "@/assets/prenatal-care.jpg";
+import cholesterolCareImg from "@/assets/cholesterol-care.jpg";
+import bodyDetoxImg from "@/assets/body-detox.jpg";
+import allergyReliefImg from "@/assets/allergy-relief.jpg";
+import coughSyrupImg from "@/assets/cough-syrup.jpg";
+import ironSupplementImg from "@/assets/iron-supplement.jpg";
+import omega3Img from "@/assets/omega3.jpg";
+import vitaminDImg from "@/assets/vitamin-d.jpg";
+import vitaminCImg from "@/assets/vitamin-c.jpg";
+import zincImmunityImg from "@/assets/zinc-immunity.jpg";
+import probioticImg from "@/assets/probiotic.jpg";
+import magnesiumImg from "@/assets/magnesium.jpg";
+import collagenImg from "@/assets/collagen.jpg";
+import spirulinaImg from "@/assets/spirulina.jpg";
+import gingerTurmericImg from "@/assets/ginger-turmeric.jpg";
+import garlicExtractImg from "@/assets/garlic-extract.jpg";
+import ginsengImg from "@/assets/ginseng.jpg";
+import moringaImg from "@/assets/moringa.jpg";
+import ashwagandhaImg from "@/assets/ashwagandha.jpg";
+import blackSeedOilImg from "@/assets/black-seed-oil.jpg";
+import aloeVeraImg from "@/assets/aloe-vera.jpg";
+import echinaceaImg from "@/assets/echinacea.jpg";
+import valerianRootImg from "@/assets/valerian-root.jpg";
+import milkThistleImg from "@/assets/milk-thistle.jpg";
+import sawPalmettoImg from "@/assets/saw-palmetto.jpg";
+import cranberryImg from "@/assets/cranberry.jpg";
+import macaRootImg from "@/assets/maca-root.jpg";
+import biotinImg from "@/assets/biotin.jpg";
+import folicAcidImg from "@/assets/folic-acid.jpg";
+import greenTeaImg from "@/assets/green-tea.jpg";
+import appleCiderImg from "@/assets/apple-cider.jpg";
+import coq10Img from "@/assets/coq10.jpg";
+import eveningPrimroseImg from "@/assets/evening-primrose.jpg";
+import calciumDImg from "@/assets/calcium-d.jpg";
+import melatoninImg from "@/assets/melatonin.jpg";
+import elderberryImg from "@/assets/elderberry.jpg";
+import bComplexImg from "@/assets/b-complex.jpg";
+import glucosamineImg from "@/assets/glucosamine.jpg";
+import propolisImg from "@/assets/propolis.jpg";
+import royalJellyImg from "@/assets/royal-jelly.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -29,153 +87,112 @@ const Produtos = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
-  const categories = ["Todos", "Saúde Reprodutiva", "Saúde Masculina", "Energia & Vitalidade", "Cardiovascular", "Beleza", "Digestão", "Imunidade", "Respiratório", "Cognitivo"];
+  const categories = ["Todos", "Saúde Reprodutiva", "Saúde Masculina", "Saúde Feminina", "Energia & Vitalidade", "Cardiovascular", "Beleza", "Digestão", "Imunidade", "Respiratório", "Cognitivo", "Sono & Stress", "Articulações", "Peso & Metabolismo", "Desintoxicação", "Vitaminas & Minerais"];
 
   const products = [
-    {
-      id: 1,
-      name: "Marion 4 Woman",
-      category: "Saúde Reprodutiva",
-      description: "Suplemento natural para saúde reprodutiva feminina.",
-      longDescription: "Marion 4 Woman é uma fórmula completa desenvolvida especialmente para apoiar a saúde reprodutiva e hormonal feminina. Contém ingredientes naturais que ajudam a equilibrar o ciclo menstrual, reduzir cólicas e promover o bem-estar geral.",
-      image: marion4WomanImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 2,
-      name: "P.I.D Syrup",
-      category: "Saúde Reprodutiva",
-      description: "Tratamento herbal para inflamações pélvicas.",
-      longDescription: "P.I.D Syrup é um xarope herbal formulado para ajudar no tratamento natural de inflamações pélvicas. Com propriedades anti-inflamatórias e antimicrobianas naturais.",
-      image: pidSyrupImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 3,
-      name: "ZAIN Hormone Imbalance",
-      category: "Saúde Reprodutiva",
-      description: "Regulação natural de hormonas femininas.",
-      longDescription: "ZAIN Hormone Imbalance é uma formulação natural que ajuda a regular o equilíbrio hormonal feminino, aliviando sintomas de desequilíbrio hormonal e promovendo bem-estar geral.",
-      image: zainHormoneImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 4,
-      name: "SPERM POWER",
-      category: "Saúde Masculina",
-      description: "Suplemento premium para fertilidade masculina.",
-      longDescription: "SPERM POWER é uma fórmula avançada desenvolvida para aumentar a qualidade e quantidade espermática, melhorar a motilidade e apoiar a saúde reprodutiva masculina.",
-      image: spermPowerImg,
-      price: "18.000 Kz"
-    },
-    {
-      id: 5,
-      name: "Prostate Care",
-      category: "Saúde Masculina",
-      description: "Suporte natural para saúde da próstata.",
-      longDescription: "Prostate Care contém saw palmetto, zinco e licopeno para apoiar a saúde da próstata e função urinária masculina.",
-      image: prostateCareImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 6,
-      name: "Fertility Plus",
-      category: "Saúde Reprodutiva",
-      description: "Apoio natural à fertilidade feminina.",
-      longDescription: "Fertility Plus é uma combinação de ervas e nutrientes que ajudam a preparar o corpo para a concepção, regulando os ciclos e promovendo a saúde uterina.",
-      image: fertilityPlusImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 7,
-      name: "LOVE KINGDOM",
-      category: "Energia & Vitalidade",
-      description: "Suplemento premium para vitalidade e intimidade.",
-      longDescription: "LOVE KINGDOM é uma fórmula premium desenvolvida para casais que desejam melhorar a vitalidade e qualidade da vida íntima de forma natural.",
-      image: loveKingdomImg,
-      price: "18.000 Kz"
-    },
-    {
-      id: 8,
-      name: "Energy Plus",
-      category: "Energia & Vitalidade",
-      description: "Suplemento energético natural para combater fadiga.",
-      longDescription: "Energy Plus combina vitaminas do complexo B, ginseng e guaraná para fornecer energia sustentada ao longo do dia.",
-      image: energyPlusImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 9,
-      name: "BABALAO Oil",
-      category: "Energia & Vitalidade",
-      description: "Óleo natural para massagem e bem-estar.",
-      longDescription: "BABALAO Oil é um óleo herbal tradicional africano para massagens terapêuticas, relaxamento muscular e promoção do bem-estar geral.",
-      image: babalaoOilImg,
-      price: "18.000 Kz"
-    },
-    {
-      id: 10,
-      name: "CD4 Immune",
-      category: "Imunidade",
-      description: "Suporte premium ao sistema imunológico.",
-      longDescription: "CD4 Immune é uma fórmula premium desenvolvida para fortalecer o sistema imunológico, aumentar as defesas naturais e promover a saúde celular.",
-      image: cd4ImmuneImg,
-      price: "18.000 Kz"
-    },
-    {
-      id: 11,
-      name: "ImmuneBoost",
-      category: "Imunidade",
-      description: "Fortalecimento natural do sistema imunológico.",
-      longDescription: "ImmuneBoost contém vitamina C, zinco, equinácea e própolis para fortalecer as defesas naturais do corpo.",
-      image: immuneBoostImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 12,
-      name: "AFYA UBONGO",
-      category: "Cognitivo",
-      description: "Suplemento premium para saúde cerebral.",
-      longDescription: "AFYA UBONGO é uma fórmula avançada para melhorar a memória, concentração e saúde cognitiva geral com ingredientes naturais nootrópicos.",
-      image: afyaUbongoImg,
-      price: "18.000 Kz"
-    },
-    {
-      id: 13,
-      name: "Cold Syrup",
-      category: "Respiratório",
-      description: "Xarope natural para gripes e constipações.",
-      longDescription: "Cold Syrup é um xarope herbal que ajuda a aliviar sintomas de gripe, tosse e constipação, fortalecendo o sistema respiratório.",
-      image: coldSyrupImg,
-      price: "3.000 Kz"
-    },
-    {
-      id: 14,
-      name: "CardioHealth",
-      category: "Cardiovascular",
-      description: "Suporte natural para saúde cardiovascular.",
-      longDescription: "CardioHealth contém ômega-3, CoQ10 e antioxidantes para apoiar a saúde do coração e circulação sanguínea.",
-      image: cardioHealthImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 15,
-      name: "GlowSkin",
-      category: "Beleza",
-      description: "Suplemento para pele, cabelo e unhas saudáveis.",
-      longDescription: "GlowSkin oferece colágeno, biotina e vitaminas essenciais para promover beleza de dentro para fora.",
-      image: glowSkinImg,
-      price: "10.000 Kz"
-    },
-    {
-      id: 16,
-      name: "DigestEase",
-      category: "Digestão",
-      description: "Apoio natural para digestão saudável.",
-      longDescription: "DigestEase combina enzimas digestivas e probióticos para melhorar a digestão e saúde intestinal.",
-      image: digestEaseImg,
-      price: "10.000 Kz"
-    }
+    // Saúde Reprodutiva
+    { id: 1, name: "Marion 4 Woman", category: "Saúde Reprodutiva", description: "Suplemento natural para saúde reprodutiva feminina.", longDescription: "Marion 4 Woman é uma fórmula completa desenvolvida especialmente para apoiar a saúde reprodutiva e hormonal feminina.", image: marion4WomanImg, price: "10.000 Kz" },
+    { id: 2, name: "P.I.D Syrup", category: "Saúde Reprodutiva", description: "Tratamento herbal para inflamações pélvicas.", longDescription: "P.I.D Syrup é um xarope herbal formulado para ajudar no tratamento natural de inflamações pélvicas.", image: pidSyrupImg, price: "10.000 Kz" },
+    { id: 3, name: "ZAIN Hormone Imbalance", category: "Saúde Reprodutiva", description: "Regulação natural de hormonas femininas.", longDescription: "ZAIN Hormone Imbalance ajuda a regular o equilíbrio hormonal feminino de forma natural.", image: zainHormoneImg, price: "10.000 Kz" },
+    { id: 4, name: "Fertility Plus", category: "Saúde Reprodutiva", description: "Apoio natural à fertilidade feminina.", longDescription: "Fertility Plus ajuda a preparar o corpo para a concepção, regulando os ciclos reprodutivos.", image: fertilityPlusImg, price: "10.000 Kz" },
+    { id: 5, name: "Prenatal Care", category: "Saúde Reprodutiva", description: "Vitaminas pré-natais para gravidez saudável.", longDescription: "Prenatal Care fornece nutrientes essenciais para uma gravidez saudável e desenvolvimento do bebé.", image: prenatalCareImg, price: "10.000 Kz" },
+    { id: 6, name: "Folic Acid", category: "Saúde Reprodutiva", description: "Ácido fólico para gravidez e saúde celular.", longDescription: "Ácido Fólico essencial para mulheres grávidas e saúde celular geral.", image: folicAcidImg, price: "10.000 Kz" },
+    
+    // Saúde Masculina
+    { id: 7, name: "SPERM POWER", category: "Saúde Masculina", description: "Suplemento premium para fertilidade masculina.", longDescription: "SPERM POWER aumenta a qualidade e quantidade espermática, melhorando a fertilidade masculina.", image: spermPowerImg, price: "18.000 Kz" },
+    { id: 8, name: "Prostate Care", category: "Saúde Masculina", description: "Suporte natural para saúde da próstata.", longDescription: "Prostate Care contém saw palmetto e zinco para apoiar a saúde da próstata.", image: prostateCareImg, price: "10.000 Kz" },
+    { id: 9, name: "Testosterone Boost", category: "Saúde Masculina", description: "Aumento natural de testosterona.", longDescription: "Testosterone Boost ajuda a aumentar os níveis de testosterona de forma natural.", image: testosteroneBoostImg, price: "10.000 Kz" },
+    { id: 10, name: "Saw Palmetto", category: "Saúde Masculina", description: "Suporte natural para próstata e sistema urinário.", longDescription: "Saw Palmetto é um suplemento natural para saúde prostática e função urinária.", image: sawPalmettoImg, price: "10.000 Kz" },
+    
+    // Saúde Feminina
+    { id: 11, name: "Menopause Relief", category: "Saúde Feminina", description: "Alívio natural dos sintomas da menopausa.", longDescription: "Menopause Relief ajuda a aliviar ondas de calor, alterações de humor e outros sintomas.", image: menopauseReliefImg, price: "10.000 Kz" },
+    { id: 12, name: "Evening Primrose", category: "Saúde Feminina", description: "Óleo de prímula para equilíbrio hormonal.", longDescription: "Evening Primrose Oil ajuda no equilíbrio hormonal feminino e saúde da pele.", image: eveningPrimroseImg, price: "10.000 Kz" },
+    { id: 13, name: "UTI Care", category: "Saúde Feminina", description: "Suporte natural para infecções urinárias.", longDescription: "UTI Care ajuda a prevenir e tratar infecções do trato urinário naturalmente.", image: utiCareImg, price: "10.000 Kz" },
+    { id: 14, name: "Cranberry", category: "Saúde Feminina", description: "Suporte natural para saúde da bexiga.", longDescription: "Cranberry ajuda a manter a saúde do trato urinário e prevenir infecções.", image: cranberryImg, price: "10.000 Kz" },
+    
+    // Energia & Vitalidade
+    { id: 15, name: "LOVE KINGDOM", category: "Energia & Vitalidade", description: "Suplemento premium para vitalidade e intimidade.", longDescription: "LOVE KINGDOM melhora a vitalidade e qualidade da vida íntima de forma natural.", image: loveKingdomImg, price: "18.000 Kz" },
+    { id: 16, name: "Energy Plus", category: "Energia & Vitalidade", description: "Suplemento energético natural para combater fadiga.", longDescription: "Energy Plus combina vitaminas do complexo B, ginseng e guaraná para energia sustentada.", image: energyPlusImg, price: "10.000 Kz" },
+    { id: 17, name: "BABALAO Oil", category: "Energia & Vitalidade", description: "Óleo natural para massagem e bem-estar.", longDescription: "BABALAO Oil é um óleo herbal tradicional africano para massagens terapêuticas.", image: babalaoOilImg, price: "18.000 Kz" },
+    { id: 18, name: "Ginseng", category: "Energia & Vitalidade", description: "Raiz de ginseng para energia e resistência.", longDescription: "Ginseng é um adaptógeno tradicional que aumenta energia, resistência e função cognitiva.", image: ginsengImg, price: "18.000 Kz" },
+    { id: 19, name: "Maca Root", category: "Energia & Vitalidade", description: "Raiz de maca peruana para vitalidade.", longDescription: "Maca Root é um superalimento peruano que aumenta energia, libido e resistência.", image: macaRootImg, price: "10.000 Kz" },
+    { id: 20, name: "Libido Plus", category: "Energia & Vitalidade", description: "Aumento natural da libido e desempenho.", longDescription: "Libido Plus ajuda a aumentar o desejo e desempenho de forma natural.", image: libidoPlusImg, price: "10.000 Kz" },
+    { id: 21, name: "Royal Jelly", category: "Energia & Vitalidade", description: "Geleia real para energia e vitalidade.", longDescription: "Royal Jelly é um superalimento das abelhas rico em nutrientes para energia e longevidade.", image: royalJellyImg, price: "18.000 Kz" },
+    { id: 22, name: "B Complex", category: "Energia & Vitalidade", description: "Complexo B para energia e sistema nervoso.", longDescription: "B Complex fornece todas as vitaminas B essenciais para energia e saúde nervosa.", image: bComplexImg, price: "10.000 Kz" },
+    
+    // Imunidade
+    { id: 23, name: "CD4 Immune", category: "Imunidade", description: "Suporte premium ao sistema imunológico.", longDescription: "CD4 Immune fortalece o sistema imunológico e aumenta as defesas naturais.", image: cd4ImmuneImg, price: "18.000 Kz" },
+    { id: 24, name: "ImmuneBoost", category: "Imunidade", description: "Fortalecimento natural do sistema imunológico.", longDescription: "ImmuneBoost contém vitamina C, zinco, equinácea e própolis para defesas naturais.", image: immuneBoostImg, price: "10.000 Kz" },
+    { id: 25, name: "Vitamin C", category: "Imunidade", description: "Vitamina C para imunidade e antioxidantes.", longDescription: "Vitamina C é essencial para o sistema imunológico e proteção antioxidante.", image: vitaminCImg, price: "10.000 Kz" },
+    { id: 26, name: "Zinc Immunity", category: "Imunidade", description: "Zinco para defesa imunológica.", longDescription: "Zinc Immunity fortalece as defesas naturais do corpo contra infecções.", image: zincImmunityImg, price: "10.000 Kz" },
+    { id: 27, name: "Echinacea", category: "Imunidade", description: "Equinácea para prevenção de gripes.", longDescription: "Echinacea é um suplemento herbal que ajuda a prevenir e tratar constipações.", image: echinaceaImg, price: "10.000 Kz" },
+    { id: 28, name: "Elderberry", category: "Imunidade", description: "Sabugueiro para suporte imunológico.", longDescription: "Elderberry é rico em antioxidantes e ajuda a combater gripes e constipações.", image: elderberryImg, price: "10.000 Kz" },
+    { id: 29, name: "Propolis", category: "Imunidade", description: "Própolis natural antibiótico.", longDescription: "Propolis é um antibiótico natural das abelhas com propriedades antimicrobianas.", image: propolisImg, price: "10.000 Kz" },
+    { id: 30, name: "Black Seed Oil", category: "Imunidade", description: "Óleo de semente preta para imunidade.", longDescription: "Black Seed Oil (Nigella Sativa) é um potente suplemento para o sistema imunológico.", image: blackSeedOilImg, price: "10.000 Kz" },
+    
+    // Cognitivo
+    { id: 31, name: "AFYA UBONGO", category: "Cognitivo", description: "Suplemento premium para saúde cerebral.", longDescription: "AFYA UBONGO melhora a memória, concentração e saúde cognitiva geral.", image: afyaUbongoImg, price: "18.000 Kz" },
+    { id: 32, name: "YA BONGO", category: "Cognitivo", description: "Suplemento premium para função cerebral.", longDescription: "YA BONGO é uma fórmula avançada para melhorar a função cerebral e memória.", image: yaBongoImg, price: "18.000 Kz" },
+    
+    // Respiratório
+    { id: 33, name: "Cold Syrup", category: "Respiratório", description: "Xarope natural para gripes e constipações.", longDescription: "Cold Syrup alivia sintomas de gripe, tosse e constipação naturalmente.", image: coldSyrupImg, price: "3.000 Kz" },
+    { id: 34, name: "Cough Syrup", category: "Respiratório", description: "Xarope herbal para tosse.", longDescription: "Cough Syrup é um xarope natural que alivia a tosse e acalma as vias respiratórias.", image: coughSyrupImg, price: "3.000 Kz" },
+    { id: 35, name: "Allergy Relief", category: "Respiratório", description: "Alívio natural de alergias.", longDescription: "Allergy Relief ajuda a aliviar sintomas de alergias respiratórias naturalmente.", image: allergyReliefImg, price: "10.000 Kz" },
+    
+    // Cardiovascular
+    { id: 36, name: "CardioHealth", category: "Cardiovascular", description: "Suporte natural para saúde cardiovascular.", longDescription: "CardioHealth contém ômega-3, CoQ10 e antioxidantes para saúde do coração.", image: cardioHealthImg, price: "10.000 Kz" },
+    { id: 37, name: "Blood Pressure", category: "Cardiovascular", description: "Suporte natural para pressão arterial.", longDescription: "Blood Pressure ajuda a manter níveis saudáveis de pressão arterial.", image: bloodPressureImg, price: "10.000 Kz" },
+    { id: 38, name: "Cholesterol Care", category: "Cardiovascular", description: "Controle natural do colesterol.", longDescription: "Cholesterol Care ajuda a manter níveis saudáveis de colesterol.", image: cholesterolCareImg, price: "10.000 Kz" },
+    { id: 39, name: "Omega 3", category: "Cardiovascular", description: "Óleo de peixe para saúde cardíaca.", longDescription: "Omega 3 é essencial para saúde cardiovascular, cerebral e anti-inflamatória.", image: omega3Img, price: "10.000 Kz" },
+    { id: 40, name: "CoQ10", category: "Cardiovascular", description: "Coenzima Q10 para energia celular.", longDescription: "CoQ10 é essencial para produção de energia celular e saúde cardíaca.", image: coq10Img, price: "10.000 Kz" },
+    { id: 41, name: "Garlic Extract", category: "Cardiovascular", description: "Extrato de alho para coração saudável.", longDescription: "Garlic Extract ajuda a manter a saúde cardiovascular e níveis de colesterol.", image: garlicExtractImg, price: "10.000 Kz" },
+    
+    // Digestão
+    { id: 42, name: "DigestEase", category: "Digestão", description: "Apoio natural para digestão saudável.", longDescription: "DigestEase combina enzimas digestivas e probióticos para melhor digestão.", image: digestEaseImg, price: "10.000 Kz" },
+    { id: 43, name: "Probiotic", category: "Digestão", description: "Probióticos para saúde intestinal.", longDescription: "Probiotic contém bilhões de CFUs para equilibrar a flora intestinal.", image: probioticImg, price: "10.000 Kz" },
+    { id: 44, name: "Aloe Vera", category: "Digestão", description: "Aloe vera para saúde digestiva.", longDescription: "Aloe Vera ajuda a acalmar o sistema digestivo e promover a saúde intestinal.", image: aloeVeraImg, price: "10.000 Kz" },
+    { id: 45, name: "Apple Cider", category: "Digestão", description: "Vinagre de maçã para digestão.", longDescription: "Apple Cider Vinegar ajuda na digestão, metabolismo e controle de açúcar no sangue.", image: appleCiderImg, price: "10.000 Kz" },
+    
+    // Beleza
+    { id: 46, name: "GlowSkin", category: "Beleza", description: "Suplemento para pele, cabelo e unhas saudáveis.", longDescription: "GlowSkin oferece colágeno, biotina e vitaminas para beleza de dentro para fora.", image: glowSkinImg, price: "10.000 Kz" },
+    { id: 47, name: "Collagen", category: "Beleza", description: "Colágeno para pele firme e jovem.", longDescription: "Collagen ajuda a manter a elasticidade da pele e reduzir rugas.", image: collagenImg, price: "10.000 Kz" },
+    { id: 48, name: "Biotin", category: "Beleza", description: "Biotina para cabelo e unhas fortes.", longDescription: "Biotin fortalece cabelos e unhas, promovendo crescimento saudável.", image: biotinImg, price: "10.000 Kz" },
+    { id: 49, name: "Anti-Aging", category: "Beleza", description: "Suplemento anti-envelhecimento.", longDescription: "Anti-Aging contém antioxidantes poderosos para combater os sinais do envelhecimento.", image: antiAgingImg, price: "10.000 Kz" },
+    { id: 50, name: "Hair Growth", category: "Beleza", description: "Suplemento para crescimento capilar.", longDescription: "Hair Growth estimula o crescimento de cabelos fortes e saudáveis.", image: hairGrowthImg, price: "10.000 Kz" },
+    
+    // Sono & Stress
+    { id: 51, name: "Stress Relief", category: "Sono & Stress", description: "Alívio natural do stress e ansiedade.", longDescription: "Stress Relief ajuda a reduzir o stress e promover calma e relaxamento.", image: stressReliefImg, price: "10.000 Kz" },
+    { id: 52, name: "Sleep Aid", category: "Sono & Stress", description: "Suporte natural para sono reparador.", longDescription: "Sleep Aid ajuda a melhorar a qualidade do sono de forma natural.", image: sleepAidImg, price: "10.000 Kz" },
+    { id: 53, name: "Ashwagandha", category: "Sono & Stress", description: "Adaptógeno para stress e ansiedade.", longDescription: "Ashwagandha é um adaptógeno que ajuda o corpo a lidar com o stress.", image: ashwagandhaImg, price: "10.000 Kz" },
+    { id: 54, name: "Valerian Root", category: "Sono & Stress", description: "Raiz de valeriana para sono natural.", longDescription: "Valerian Root é um suplemento natural que promove sono tranquilo.", image: valerianRootImg, price: "10.000 Kz" },
+    { id: 55, name: "Melatonin", category: "Sono & Stress", description: "Melatonina para regular o sono.", longDescription: "Melatonin ajuda a regular o ciclo natural de sono-vigília.", image: melatoninImg, price: "10.000 Kz" },
+    { id: 56, name: "Magnesium", category: "Sono & Stress", description: "Magnésio para relaxamento muscular.", longDescription: "Magnesium ajuda no relaxamento muscular, sono e função nervosa.", image: magnesiumImg, price: "10.000 Kz" },
+    
+    // Articulações
+    { id: 57, name: "Joint Relief", category: "Articulações", description: "Alívio natural para dores articulares.", longDescription: "Joint Relief ajuda a aliviar dores e inflamações nas articulações.", image: jointReliefImg, price: "10.000 Kz" },
+    { id: 58, name: "Glucosamine", category: "Articulações", description: "Glucosamina para cartilagem saudável.", longDescription: "Glucosamine ajuda a manter a saúde das articulações e cartilagens.", image: glucosamineImg, price: "10.000 Kz" },
+    { id: 59, name: "Ginger Turmeric", category: "Articulações", description: "Gengibre e açafrão anti-inflamatório.", longDescription: "Ginger Turmeric combina dois poderosos anti-inflamatórios naturais.", image: gingerTurmericImg, price: "10.000 Kz" },
+    
+    // Peso & Metabolismo
+    { id: 60, name: "Weight Loss", category: "Peso & Metabolismo", description: "Suporte natural para perda de peso.", longDescription: "Weight Loss ajuda a acelerar o metabolismo e queimar gordura.", image: weightLossImg, price: "10.000 Kz" },
+    { id: 61, name: "Green Tea", category: "Peso & Metabolismo", description: "Chá verde para metabolismo.", longDescription: "Green Tea Extract acelera o metabolismo e ajuda na perda de peso.", image: greenTeaImg, price: "10.000 Kz" },
+    { id: 62, name: "Diabetes Control", category: "Peso & Metabolismo", description: "Suporte natural para açúcar no sangue.", longDescription: "Diabetes Control ajuda a manter níveis saudáveis de glicose no sangue.", image: diabetesControlImg, price: "10.000 Kz" },
+    
+    // Desintoxicação
+    { id: 63, name: "Liver Detox", category: "Desintoxicação", description: "Desintoxicação natural do fígado.", longDescription: "Liver Detox ajuda a limpar e proteger o fígado de toxinas.", image: liverDetoxImg, price: "10.000 Kz" },
+    { id: 64, name: "Kidney Care", category: "Desintoxicação", description: "Suporte natural para saúde renal.", longDescription: "Kidney Care ajuda a manter os rins saudáveis e funcionando bem.", image: kidneyCareImg, price: "10.000 Kz" },
+    { id: 65, name: "Body Detox", category: "Desintoxicação", description: "Limpeza corporal completa.", longDescription: "Body Detox ajuda a eliminar toxinas do corpo de forma natural.", image: bodyDetoxImg, price: "10.000 Kz" },
+    { id: 66, name: "Milk Thistle", category: "Desintoxicação", description: "Cardo mariano para saúde hepática.", longDescription: "Milk Thistle protege e regenera as células do fígado.", image: milkThistleImg, price: "10.000 Kz" },
+    { id: 67, name: "Spirulina", category: "Desintoxicação", description: "Superalimento verde desintoxicante.", longDescription: "Spirulina é rica em nutrientes e ajuda a desintoxicar o corpo.", image: spirulinaImg, price: "10.000 Kz" },
+    
+    // Vitaminas & Minerais
+    { id: 68, name: "Multivitamin", category: "Vitaminas & Minerais", description: "Multivitamínico completo diário.", longDescription: "Multivitamin fornece todas as vitaminas e minerais essenciais para o dia a dia.", image: multivitaminImg, price: "10.000 Kz" },
+    { id: 69, name: "Vitamin D", category: "Vitaminas & Minerais", description: "Vitamina D para ossos e imunidade.", longDescription: "Vitamin D é essencial para saúde óssea e sistema imunológico.", image: vitaminDImg, price: "10.000 Kz" },
+    { id: 70, name: "Iron Supplement", category: "Vitaminas & Minerais", description: "Suplemento de ferro para anemia.", longDescription: "Iron Supplement ajuda a combater anemia e aumentar energia.", image: ironSupplementImg, price: "10.000 Kz" },
+    { id: 71, name: "Calcium D", category: "Vitaminas & Minerais", description: "Cálcio e vitamina D para ossos.", longDescription: "Calcium D fortalece ossos e previne osteoporose.", image: calciumDImg, price: "10.000 Kz" },
+    { id: 72, name: "Bone Health", category: "Vitaminas & Minerais", description: "Suplemento completo para ossos.", longDescription: "Bone Health contém cálcio, vitamina D e magnésio para ossos fortes.", image: boneHealthImg, price: "10.000 Kz" },
+    { id: 73, name: "Eye Health", category: "Vitaminas & Minerais", description: "Luteína para saúde ocular.", longDescription: "Eye Health contém luteína e zeaxantina para proteger a visão.", image: eyeHealthImg, price: "10.000 Kz" },
+    { id: 74, name: "Moringa", category: "Vitaminas & Minerais", description: "Superalimento rico em nutrientes.", longDescription: "Moringa é um superalimento com vitaminas, minerais e antioxidantes.", image: moringaImg, price: "10.000 Kz" },
   ];
 
   const filteredProducts = products.filter(product => {
@@ -196,6 +213,7 @@ const Produtos = () => {
     link.click();
     document.body.removeChild(link);
   };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -208,8 +226,8 @@ const Produtos = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
               Produtos Naturais
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in mb-6">
-              Suplementos e produtos naturais de alta qualidade para o seu bem-estar
+            <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in mb-4">
+              {products.length} suplementos e produtos naturais de alta qualidade para o seu bem-estar
             </p>
             <Link to="/precario">
               <Button variant="secondary" size="lg" className="animate-fade-in">
@@ -223,8 +241,8 @@ const Produtos = () => {
         {/* Filters */}
         <section className="py-8 bg-muted/30 sticky top-[100px] z-40">
           <div className="container-custom">
-            <div className="flex flex-col md:flex-row gap-4 items-center">
-              <div className="relative flex-1 w-full md:max-w-md">
+            <div className="flex flex-col gap-4">
+              <div className="relative w-full md:max-w-md">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
                   type="text"
@@ -234,7 +252,7 @@ const Produtos = () => {
                   className="pl-10"
                 />
               </div>
-              <div className="flex gap-2 flex-wrap justify-center">
+              <div className="flex gap-2 flex-wrap">
                 {categories.map((cat) => (
                   <Button
                     key={cat}
@@ -253,6 +271,7 @@ const Produtos = () => {
         {/* Products Grid */}
         <section className="section-spacing">
           <div className="container-custom">
+            <p className="text-muted-foreground mb-6">{filteredProducts.length} produtos encontrados</p>
             {filteredProducts.length === 0 ? (
               <div className="text-center py-16">
                 <p className="text-xl text-muted-foreground">Nenhum produto encontrado.</p>
