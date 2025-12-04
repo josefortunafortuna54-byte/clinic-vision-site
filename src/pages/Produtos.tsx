@@ -9,6 +9,14 @@ import cardioHealthImg from "@/assets/cardio-health.jpg";
 import glowSkinImg from "@/assets/glow-skin.jpg";
 import digestEaseImg from "@/assets/digest-ease.jpg";
 import immuneBoostImg from "@/assets/immune-boost.jpg";
+import spermPowerImg from "@/assets/sperm-power.jpg";
+import cd4ImmuneImg from "@/assets/cd4-immune.jpg";
+import afyaUbongoImg from "@/assets/afya-ubongo.jpg";
+import babalaoOilImg from "@/assets/babalao-oil.jpg";
+import loveKingdomImg from "@/assets/love-kingdom.jpg";
+import coldSyrupImg from "@/assets/cold-syrup.jpg";
+import prostateCareImg from "@/assets/prostate-care.jpg";
+import fertilityPlusImg from "@/assets/fertility-plus.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -21,7 +29,7 @@ const Produtos = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
-  const categories = ["Todos", "Saúde Reprodutiva", "Energia & Vitalidade", "Cardiovascular", "Beleza", "Digestão", "Imunidade"];
+  const categories = ["Todos", "Saúde Reprodutiva", "Saúde Masculina", "Energia & Vitalidade", "Cardiovascular", "Beleza", "Digestão", "Imunidade", "Respiratório", "Cognitivo"];
 
   const products = [
     {
@@ -31,7 +39,7 @@ const Produtos = () => {
       description: "Suplemento natural para saúde reprodutiva feminina.",
       longDescription: "Marion 4 Woman é uma fórmula completa desenvolvida especialmente para apoiar a saúde reprodutiva e hormonal feminina. Contém ingredientes naturais que ajudam a equilibrar o ciclo menstrual, reduzir cólicas e promover o bem-estar geral.",
       image: marion4WomanImg,
-      price: "—"
+      price: "10.000 Kz"
     },
     {
       id: 2,
@@ -40,7 +48,7 @@ const Produtos = () => {
       description: "Tratamento herbal para inflamações pélvicas.",
       longDescription: "P.I.D Syrup é um xarope herbal formulado para ajudar no tratamento natural de inflamações pélvicas. Com propriedades anti-inflamatórias e antimicrobianas naturais.",
       image: pidSyrupImg,
-      price: "—"
+      price: "10.000 Kz"
     },
     {
       id: 3,
@@ -49,52 +57,124 @@ const Produtos = () => {
       description: "Regulação natural de hormonas femininas.",
       longDescription: "ZAIN Hormone Imbalance é uma formulação natural que ajuda a regular o equilíbrio hormonal feminino, aliviando sintomas de desequilíbrio hormonal e promovendo bem-estar geral.",
       image: zainHormoneImg,
-      price: "—"
+      price: "10.000 Kz"
     },
     {
       id: 4,
+      name: "SPERM POWER",
+      category: "Saúde Masculina",
+      description: "Suplemento premium para fertilidade masculina.",
+      longDescription: "SPERM POWER é uma fórmula avançada desenvolvida para aumentar a qualidade e quantidade espermática, melhorar a motilidade e apoiar a saúde reprodutiva masculina.",
+      image: spermPowerImg,
+      price: "18.000 Kz"
+    },
+    {
+      id: 5,
+      name: "Prostate Care",
+      category: "Saúde Masculina",
+      description: "Suporte natural para saúde da próstata.",
+      longDescription: "Prostate Care contém saw palmetto, zinco e licopeno para apoiar a saúde da próstata e função urinária masculina.",
+      image: prostateCareImg,
+      price: "10.000 Kz"
+    },
+    {
+      id: 6,
+      name: "Fertility Plus",
+      category: "Saúde Reprodutiva",
+      description: "Apoio natural à fertilidade feminina.",
+      longDescription: "Fertility Plus é uma combinação de ervas e nutrientes que ajudam a preparar o corpo para a concepção, regulando os ciclos e promovendo a saúde uterina.",
+      image: fertilityPlusImg,
+      price: "10.000 Kz"
+    },
+    {
+      id: 7,
+      name: "LOVE KINGDOM",
+      category: "Energia & Vitalidade",
+      description: "Suplemento premium para vitalidade e intimidade.",
+      longDescription: "LOVE KINGDOM é uma fórmula premium desenvolvida para casais que desejam melhorar a vitalidade e qualidade da vida íntima de forma natural.",
+      image: loveKingdomImg,
+      price: "18.000 Kz"
+    },
+    {
+      id: 8,
       name: "Energy Plus",
       category: "Energia & Vitalidade",
       description: "Suplemento energético natural para combater fadiga.",
       longDescription: "Energy Plus combina vitaminas do complexo B, ginseng e guaraná para fornecer energia sustentada ao longo do dia.",
       image: energyPlusImg,
-      price: "—"
+      price: "10.000 Kz"
     },
     {
-      id: 5,
-      name: "CardioHealth",
-      category: "Cardiovascular",
-      description: "Suporte natural para saúde cardiovascular.",
-      longDescription: "CardioHealth contém ômega-3, CoQ10 e antioxidantes para apoiar a saúde do coração e circulação sanguínea.",
-      image: cardioHealthImg,
-      price: "—"
+      id: 9,
+      name: "BABALAO Oil",
+      category: "Energia & Vitalidade",
+      description: "Óleo natural para massagem e bem-estar.",
+      longDescription: "BABALAO Oil é um óleo herbal tradicional africano para massagens terapêuticas, relaxamento muscular e promoção do bem-estar geral.",
+      image: babalaoOilImg,
+      price: "18.000 Kz"
     },
     {
-      id: 6,
-      name: "GlowSkin",
-      category: "Beleza",
-      description: "Suplemento para pele, cabelo e unhas saudáveis.",
-      longDescription: "GlowSkin oferece colágeno, biotina e vitaminas essenciais para promover beleza de dentro para fora.",
-      image: glowSkinImg,
-      price: "—"
+      id: 10,
+      name: "CD4 Immune",
+      category: "Imunidade",
+      description: "Suporte premium ao sistema imunológico.",
+      longDescription: "CD4 Immune é uma fórmula premium desenvolvida para fortalecer o sistema imunológico, aumentar as defesas naturais e promover a saúde celular.",
+      image: cd4ImmuneImg,
+      price: "18.000 Kz"
     },
     {
-      id: 7,
-      name: "DigestEase",
-      category: "Digestão",
-      description: "Apoio natural para digestão saudável.",
-      longDescription: "DigestEase combina enzimas digestivas e probióticos para melhorar a digestão e saúde intestinal.",
-      image: digestEaseImg,
-      price: "—"
-    },
-    {
-      id: 8,
+      id: 11,
       name: "ImmuneBoost",
       category: "Imunidade",
       description: "Fortalecimento natural do sistema imunológico.",
       longDescription: "ImmuneBoost contém vitamina C, zinco, equinácea e própolis para fortalecer as defesas naturais do corpo.",
       image: immuneBoostImg,
-      price: "—"
+      price: "10.000 Kz"
+    },
+    {
+      id: 12,
+      name: "AFYA UBONGO",
+      category: "Cognitivo",
+      description: "Suplemento premium para saúde cerebral.",
+      longDescription: "AFYA UBONGO é uma fórmula avançada para melhorar a memória, concentração e saúde cognitiva geral com ingredientes naturais nootrópicos.",
+      image: afyaUbongoImg,
+      price: "18.000 Kz"
+    },
+    {
+      id: 13,
+      name: "Cold Syrup",
+      category: "Respiratório",
+      description: "Xarope natural para gripes e constipações.",
+      longDescription: "Cold Syrup é um xarope herbal que ajuda a aliviar sintomas de gripe, tosse e constipação, fortalecendo o sistema respiratório.",
+      image: coldSyrupImg,
+      price: "3.000 Kz"
+    },
+    {
+      id: 14,
+      name: "CardioHealth",
+      category: "Cardiovascular",
+      description: "Suporte natural para saúde cardiovascular.",
+      longDescription: "CardioHealth contém ômega-3, CoQ10 e antioxidantes para apoiar a saúde do coração e circulação sanguínea.",
+      image: cardioHealthImg,
+      price: "10.000 Kz"
+    },
+    {
+      id: 15,
+      name: "GlowSkin",
+      category: "Beleza",
+      description: "Suplemento para pele, cabelo e unhas saudáveis.",
+      longDescription: "GlowSkin oferece colágeno, biotina e vitaminas essenciais para promover beleza de dentro para fora.",
+      image: glowSkinImg,
+      price: "10.000 Kz"
+    },
+    {
+      id: 16,
+      name: "DigestEase",
+      category: "Digestão",
+      description: "Apoio natural para digestão saudável.",
+      longDescription: "DigestEase combina enzimas digestivas e probióticos para melhorar a digestão e saúde intestinal.",
+      image: digestEaseImg,
+      price: "10.000 Kz"
     }
   ];
 
