@@ -1,12 +1,18 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoQuicep from "@/assets/logo-quicep.jpg";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleMarcarConsulta = () => {
+    navigate("/innovacoes#agendamento");
+    setIsOpen(false);
+  };
 
   const links = [
     { name: "Início", path: "/" },
@@ -58,7 +64,10 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Button className="ml-4">Marcar Consulta</Button>
+            <Button className="ml-4" onClick={handleMarcarConsulta}>
+              <Calendar className="h-4 w-4 mr-2" />
+              Marcar Consulta
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,7 +97,10 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Button className="w-full mt-4">Marcar Consulta</Button>
+            <Button className="w-full mt-4" onClick={handleMarcarConsulta}>
+              <Calendar className="h-4 w-4 mr-2" />
+              Marcar Consulta
+            </Button>
           </div>
         )}
       </div>
