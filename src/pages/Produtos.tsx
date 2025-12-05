@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, ShoppingCart, Info, TableIcon } from "lucide-react";
+import { Search, ShoppingCart, Info, TableIcon, Star, Filter } from "lucide-react";
 import { Link } from "react-router-dom";
 import zainHormoneImg from "@/assets/zain-hormone.jpg";
 import pidSyrupImg from "@/assets/pid-syrup.jpg";
@@ -86,8 +86,21 @@ const Produtos = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [selectedPriceRange, setSelectedPriceRange] = useState("Todos");
 
   const categories = ["Todos", "Saúde Reprodutiva", "Saúde Masculina", "Saúde Feminina", "Energia & Vitalidade", "Cardiovascular", "Beleza", "Digestão", "Imunidade", "Respiratório", "Cognitivo", "Sono & Stress", "Articulações", "Peso & Metabolismo", "Desintoxicação", "Vitaminas & Minerais"];
+
+  const priceRanges = [
+    { label: "Todos", min: 0, max: Infinity },
+    { label: "Até 5.000 Kz", min: 0, max: 5000 },
+    { label: "5.000 - 10.000 Kz", min: 5000, max: 10000 },
+    { label: "10.000 - 15.000 Kz", min: 10000, max: 15000 },
+    { label: "Acima de 15.000 Kz", min: 15000, max: Infinity },
+  ];
+
+  const getNumericPrice = (priceStr: string): number => {
+    return parseInt(priceStr.replace(/\./g, "").replace(" Kz", ""));
+  };
 
   const products = [
     // Saúde Reprodutiva
@@ -199,8 +212,19 @@ const Produtos = () => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          product.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === "Todos" || product.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    
+    const numericPrice = getNumericPrice(product.price);
+    const priceRange = priceRanges.find(r => r.label === selectedPriceRange);
+    const matchesPrice = selectedPriceRange === "Todos" || 
+      (priceRange && numericPrice >= priceRange.min && numericPrice <= priceRange.max);
+    
+    return matchesSearch && matchesCategory && matchesPrice;
   });
+
+  // Produtos populares/premium
+  const popularProducts = products.filter(p => 
+    ["SPERM POWER", "CD4 Immune", "AFYA UBONGO", "YA BONGO", "LOVE KINGDOM", "Ginseng"].includes(p.name)
+  );
 
   const handleWhatsAppOrder = (productName: string) => {
     const message = `Olá! Gostaria de saber mais sobre o produto: ${productName}`;
@@ -238,19 +262,75 @@ const Produtos = () => {
           </div>
         </section>
 
+        {/* Popular Products Section */}
+        <section className="section-spacing bg-muted/20">
+          <div className="container-custom">
+            <div className="flex items-center gap-3 mb-8">
+              <Star className="h-7 w-7 text-yellow-500 fill-yellow-500" />
+              <h2 className="text-3xl font-bold">Produtos Populares</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {popularProducts.map((product) => (
+                <div key={product.id} className="bg-card rounded-lg overflow-hidden card-hover border-2 border-primary/20">
+                  <div className="relative">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-48 object-cover"
+                    />
+                    <span className="absolute top-3 right-3 bg-yellow-500 text-yellow-950 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                      <Star className="h-3 w-3 fill-current" />
+                      Popular
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <span className="text-xs font-medium text-primary">{product.category}</span>
+                    <h3 className="text-lg font-bold mt-1 mb-2">{product.name}</h3>
+                    <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xl font-bold text-primary">{product.price}</span>
+                      <Button size="sm" onClick={() => handleWhatsAppOrder(product.name)}>
+                        <ShoppingCart className="h-4 w-4 mr-1" />
+                        Pedir
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Filters */}
         <section className="py-8 bg-muted/30 sticky top-[100px] z-40">
           <div className="container-custom">
             <div className="flex flex-col gap-4">
-              <div className="relative w-full md:max-w-md">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="Pesquisar produtos..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
-                />
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="relative w-full md:max-w-md">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder="Pesquisar produtos..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-10"
+                  />
+                </div>
+                {/* Price Filter */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <Filter className="h-5 w-5 text-muted-foreground" />
+                  <span className="text-sm font-medium text-muted-foreground">Preço:</span>
+                  {priceRanges.map((range) => (
+                    <Button
+                      key={range.label}
+                      variant={selectedPriceRange === range.label ? "default" : "outline"}
+                      size="sm"
+                      onClick={() => setSelectedPriceRange(range.label)}
+                    >
+                      {range.label}
+                    </Button>
+                  ))}
+                </div>
               </div>
               <div className="flex gap-2 flex-wrap">
                 {categories.map((cat) => (
