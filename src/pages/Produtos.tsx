@@ -221,9 +221,9 @@ const Produtos = () => {
     return matchesSearch && matchesCategory && matchesPrice;
   });
 
-  // Produtos populares/premium
+  // Produtos populares/premium (todos a 18.000 Kz)
   const popularProducts = products.filter(p => 
-    ["SPERM POWER", "CD4 Immune", "AFYA UBONGO", "YA BONGO", "LOVE KINGDOM", "Ginseng"].includes(p.name)
+    ["SPERM POWER", "CD4 Immune", "AFYA UBONGO", "YA BONGO", "LOVE KINGDOM", "BABALAO Oil", "Royal Jelly", "Ginseng"].includes(p.name)
   );
 
   const handleWhatsAppOrder = (productName: string) => {
