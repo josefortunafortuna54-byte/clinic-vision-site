@@ -29,23 +29,24 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border shadow-soft">
       {/* Top Contact Bar */}
-      <div className="bg-primary text-primary-foreground py-2 text-sm">
-        <div className="container-custom flex flex-wrap items-center justify-center md:justify-end gap-4">
-          <a href="tel:+244973003455" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            📞 973 003 455 / 957 600 902
+      <div className="bg-primary text-primary-foreground py-1.5 md:py-2 text-xs md:text-sm">
+        <div className="container-custom flex items-center justify-center md:justify-end gap-2 md:gap-4 overflow-x-auto">
+          <a href="tel:+244973003455" className="flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity whitespace-nowrap">
+            📞 973 003 455
           </a>
-          <a href="mailto:quicepquicep@gmail.com" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <span className="text-primary-foreground/50 hidden sm:inline">|</span>
+          <a href="mailto:quicepquicep@gmail.com" className="flex items-center gap-1 md:gap-2 hover:opacity-80 transition-opacity whitespace-nowrap">
             ✉️ quicepquicep@gmail.com
           </a>
         </div>
       </div>
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center space-x-2">
+        <div className="flex items-center justify-between h-14 md:h-16">
+          <Link to="/" className="flex items-center shrink-0">
             <img 
               src={logoQuicep} 
               alt="Clínica QUICEP Logo" 
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-12 md:h-16 w-auto object-contain"
             />
           </Link>
 
