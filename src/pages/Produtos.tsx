@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, ShoppingCart, Info, TableIcon, Star, Filter } from "lucide-react";
+import { Search, ShoppingCart, Info, TableIcon, Filter } from "lucide-react";
 import { Link } from "react-router-dom";
 import zainHormoneImg from "@/assets/zain-hormone.jpg";
 import pidSyrupImg from "@/assets/pid-syrup.jpg";
@@ -221,10 +221,6 @@ const Produtos = () => {
     return matchesSearch && matchesCategory && matchesPrice;
   });
 
-  // Produtos populares/premium (todos a 18.000 Kz)
-  const popularProducts = products.filter(p => 
-    ["SPERM POWER", "CD4 Immune", "AFYA UBONGO", "YA BONGO", "LOVE KINGDOM", "BABALAO Oil", "Royal Jelly", "Ginseng"].includes(p.name)
-  );
 
   const handleWhatsAppOrder = (productName: string) => {
     const message = `Olá! Gostaria de saber mais sobre o produto: ${productName}`;
@@ -262,44 +258,6 @@ const Produtos = () => {
           </div>
         </section>
 
-        {/* Popular Products Section */}
-        <section className="section-spacing bg-muted/20">
-          <div className="container-custom">
-            <div className="flex items-center gap-3 mb-8">
-              <Star className="h-7 w-7 text-yellow-500 fill-yellow-500" />
-              <h2 className="text-3xl font-bold">Produtos Populares</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {popularProducts.map((product) => (
-                <div key={product.id} className="bg-card rounded-lg overflow-hidden card-hover border-2 border-primary/20">
-                  <div className="relative">
-                    <img 
-                      src={product.image} 
-                      alt={product.name}
-                      className="w-full h-48 object-cover"
-                    />
-                    <span className="absolute top-3 right-3 bg-yellow-500 text-yellow-950 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
-                      <Star className="h-3 w-3 fill-current" />
-                      Popular
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <span className="text-xs font-medium text-primary">{product.category}</span>
-                    <h3 className="text-lg font-bold mt-1 mb-2">{product.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xl font-bold text-primary">{product.price}</span>
-                      <Button size="sm" onClick={() => handleWhatsAppOrder(product.name)}>
-                        <ShoppingCart className="h-4 w-4 mr-1" />
-                        Pedir
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Filters */}
         <section className="py-8 bg-muted/30 sticky top-[100px] z-40">

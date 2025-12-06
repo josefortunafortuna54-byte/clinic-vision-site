@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Stethoscope, Pill, Video, Microscope, Leaf, Users, Bot, Calendar, Sparkles } from "lucide-react";
-import pidSyrupImg from "@/assets/pid-syrup.jpg";
-import zainHormoneImg from "@/assets/zain-hormone.jpg";
+import { ArrowRight, Heart, Stethoscope, Pill, Video, Microscope, Leaf, Users, Bot, Calendar, Sparkles, Star, ShoppingCart } from "lucide-react";
+import spermPowerImg from "@/assets/sperm-power.jpg";
+import cd4ImmuneImg from "@/assets/cd4-immune.jpg";
+import afyaUbongoImg from "@/assets/afya-ubongo.jpg";
+import yaBongoImg from "@/assets/ya-bongo.jpg";
+import loveKingdomImg from "@/assets/love-kingdom.jpg";
+import babalaoOilImg from "@/assets/babalao-oil.jpg";
+import royalJellyImg from "@/assets/royal-jelly.jpg";
+import ginsengImg from "@/assets/ginseng.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
@@ -77,6 +83,29 @@ const Index = () => {
       rating: 5
     }
   ];
+
+  const popularProducts = [
+    { id: 1, name: "SPERM POWER", category: "Saúde Masculina", description: "Suplemento premium para fertilidade masculina.", image: spermPowerImg, price: "18.000 Kz" },
+    { id: 2, name: "CD4 Immune", category: "Imunidade", description: "Suporte premium ao sistema imunológico.", image: cd4ImmuneImg, price: "18.000 Kz" },
+    { id: 3, name: "AFYA UBONGO", category: "Cognitivo", description: "Suplemento premium para saúde cerebral.", image: afyaUbongoImg, price: "18.000 Kz" },
+    { id: 4, name: "YA BONGO", category: "Cognitivo", description: "Suplemento premium para função cerebral.", image: yaBongoImg, price: "18.000 Kz" },
+    { id: 5, name: "LOVE KINGDOM", category: "Energia & Vitalidade", description: "Suplemento premium para vitalidade e intimidade.", image: loveKingdomImg, price: "18.000 Kz" },
+    { id: 6, name: "BABALAO Oil", category: "Energia & Vitalidade", description: "Óleo natural para massagem e bem-estar.", image: babalaoOilImg, price: "18.000 Kz" },
+    { id: 7, name: "Royal Jelly", category: "Energia & Vitalidade", description: "Geleia real para energia e vitalidade.", image: royalJellyImg, price: "18.000 Kz" },
+    { id: 8, name: "Ginseng", category: "Energia & Vitalidade", description: "Raiz de ginseng para energia e resistência.", image: ginsengImg, price: "18.000 Kz" },
+  ];
+
+  const handleWhatsAppOrder = (productName: string) => {
+    const message = `Olá! Gostaria de saber mais sobre o produto: ${productName}`;
+    const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -220,61 +249,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Products Preview */}
+      {/* Popular Products Section */}
       <section className="section-spacing bg-muted/30">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold mb-4">Produtos Populares</h2>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Star className="h-8 w-8 text-yellow-500 fill-yellow-500" />
+              <h2 className="text-3xl md:text-4xl font-poppins font-bold">Produtos Populares</h2>
+            </div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Suplementos naturais de alta qualidade para o seu bem-estar
+              Produtos premium de alta qualidade para o seu bem-estar
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="overflow-hidden card-hover">
-              <img 
-                src={pidSyrupImg} 
-                alt="P.I.D Syrup"
-                className="w-full h-48 object-cover"
-              />
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">P.I.D Syrup</h3>
-                <p className="text-sm text-muted-foreground mb-4">Tratamento herbal natural</p>
-                <Link to="/produtos">
-                  <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden card-hover">
-              <img 
-                src={zainHormoneImg} 
-                alt="ZAIN Hormone Imbalance"
-                className="w-full h-48 object-cover"
-              />
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">ZAIN Hormone</h3>
-                <p className="text-sm text-muted-foreground mb-4">Equilíbrio hormonal feminino</p>
-                <Link to="/produtos">
-                  <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
-                </Link>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden card-hover">
-              <img 
-                src={pidSyrupImg} 
-                alt="Marion 4 Woman"
-                className="w-full h-48 object-cover"
-              />
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Marion 4 Woman</h3>
-                <p className="text-sm text-muted-foreground mb-4">Saúde reprodutiva feminina</p>
-                <Link to="/produtos">
-                  <Button variant="outline" size="sm" className="w-full">Ver Detalhes</Button>
-                </Link>
-              </CardContent>
-            </Card>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {popularProducts.map((product) => (
+              <Card key={product.id} className="overflow-hidden card-hover border-2 border-primary/20">
+                <div className="relative">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-48 object-cover"
+                  />
+                  <span className="absolute top-3 right-3 bg-yellow-500 text-yellow-950 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+                    <Star className="h-3 w-3 fill-current" />
+                    Popular
+                  </span>
+                </div>
+                <CardContent className="p-5">
+                  <span className="text-xs font-medium text-primary">{product.category}</span>
+                  <h3 className="text-lg font-bold mt-1 mb-2">{product.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{product.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-bold text-primary">{product.price}</span>
+                    <Button size="sm" onClick={() => handleWhatsAppOrder(product.name)}>
+                      <ShoppingCart className="h-4 w-4 mr-1" />
+                      Pedir
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           <div className="text-center mt-12">
