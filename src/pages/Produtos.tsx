@@ -239,19 +239,19 @@ const Produtos = () => {
       <Navigation />
       <WhatsAppButton />
       
-      <main className="flex-1 pt-24 md:pt-28">
+      <main className="flex-1 pt-[88px] md:pt-[104px]">
         {/* Hero Section */}
-        <section className="hero-gradient text-primary-foreground section-spacing">
+        <section className="hero-gradient text-primary-foreground py-8 md:py-16">
           <div className="container-custom">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-6 animate-fade-in">
               Produtos Naturais
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in mb-4">
-              {products.length} suplementos e produtos naturais de alta qualidade para o seu bem-estar
+            <p className="text-base sm:text-lg md:text-xl opacity-90 max-w-3xl animate-fade-in mb-4">
+              {products.length} suplementos e produtos naturais de alta qualidade
             </p>
             <Link to="/precario">
-              <Button variant="secondary" size="lg" className="animate-fade-in">
-                <TableIcon className="h-5 w-5 mr-2" />
+              <Button variant="secondary" size="sm" className="animate-fade-in md:text-base md:px-6 md:py-3">
+                <TableIcon className="h-4 w-4 md:h-5 md:w-5 mr-2" />
                 Ver Tabela de Preçário
               </Button>
             </Link>
@@ -260,43 +260,51 @@ const Produtos = () => {
 
 
         {/* Filters */}
-        <section className="py-8 bg-muted/30 sticky top-[100px] z-40">
-          <div className="container-custom">
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="relative w-full md:max-w-md">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input
-                    type="text"
-                    placeholder="Pesquisar produtos..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10"
-                  />
-                </div>
-                {/* Price Filter */}
-                <div className="flex items-center gap-2 flex-wrap">
-                  <Filter className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-sm font-medium text-muted-foreground">Preço:</span>
-                  {priceRanges.map((range) => (
-                    <Button
-                      key={range.label}
-                      variant={selectedPriceRange === range.label ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setSelectedPriceRange(range.label)}
-                    >
-                      {range.label}
-                    </Button>
-                  ))}
-                </div>
+        <section className="py-4 md:py-6 bg-muted/30 sticky top-[88px] md:top-[104px] z-40 border-b border-border">
+          <div className="container-custom space-y-3">
+            {/* Search Input */}
+            <div className="relative w-full">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 md:h-5 md:w-5 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Pesquisar produtos..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-9 md:pl-10 h-10 text-sm"
+              />
+            </div>
+            
+            {/* Price Filter - Horizontal Scroll */}
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0">
+                <Filter className="h-4 w-4 text-muted-foreground" />
+                <span className="text-xs md:text-sm font-medium text-muted-foreground whitespace-nowrap">Preço:</span>
               </div>
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide -mx-1 px-1">
+                {priceRanges.map((range) => (
+                  <Button
+                    key={range.label}
+                    variant={selectedPriceRange === range.label ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedPriceRange(range.label)}
+                    className="shrink-0 text-xs md:text-sm h-8 px-3"
+                  >
+                    {range.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
+            
+            {/* Categories - Horizontal Scroll */}
+            <div className="overflow-x-auto pb-1 scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
+              <div className="flex gap-2 w-max md:w-auto md:flex-wrap">
                 {categories.map((cat) => (
                   <Button
                     key={cat}
                     variant={selectedCategory === cat ? "default" : "outline"}
                     size="sm"
                     onClick={() => setSelectedCategory(cat)}
+                    className="shrink-0 text-xs md:text-sm h-8 px-3 whitespace-nowrap"
                   >
                     {cat}
                   </Button>
