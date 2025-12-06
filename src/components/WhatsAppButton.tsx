@@ -12,12 +12,12 @@ const WhatsAppButton = () => {
 
   const predefinedMessages = [
     {
-      label: "Profissional",
-      message: "Olá, gostaria de receber mais informações sobre os serviços da Clínica Quicep.",
+      label: "Boas-vindas",
+      message: "Olá! 😊 Bem-vindo(a) à Clínica Quicep. É um prazer atender você! Como posso ajudar?",
     },
     {
-      label: "Curta",
-      message: "Olá, quero informações da Clínica Quicep.",
+      label: "Profissional",
+      message: "Olá, gostaria de receber mais informações sobre os serviços da Clínica Quicep.",
     },
     {
       label: "Agendamento",
@@ -35,10 +35,6 @@ const WhatsAppButton = () => {
       label: "Cliente Antigo",
       message: "Olá, já fui atendido na Clínica Quicep e gostaria de marcar um novo serviço.",
     },
-    {
-      label: "Formal",
-      message: "Boa tarde, poderia fornecer informações sobre os serviços disponíveis na Clínica Quicep?",
-    },
   ];
 
   const openWhatsApp = (message: string) => {
@@ -48,7 +44,6 @@ const WhatsAppButton = () => {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     
-    // Tentar abrir
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
