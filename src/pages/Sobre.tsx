@@ -25,7 +25,7 @@ const Sobre = () => {
       bio: "Especialista em Nutrição Natural e Terapêutica"
     },
     {
-      name: "Dr. Paulo Mendes",
+      name: "Dr. Jamisse",
       role: "Terapeuta",
       image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop",
       bio: "Especialista em Terapias Naturais e Aconselhamento"
