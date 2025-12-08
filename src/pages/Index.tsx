@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Stethoscope, Pill, Video, Microscope, Leaf, Users, Bot, Calendar, Sparkles, Star, ShoppingCart, Play, Headphones, MessageCircle } from "lucide-react";
+import { ArrowRight, Heart, Stethoscope, Pill, Video, Microscope, Leaf, Users, Bot, Calendar, Sparkles, Star, ShoppingCart, Play, Headphones, MessageCircle, X } from "lucide-react";
 import spermPowerImg from "@/assets/sperm-power.jpg";
 import cd4ImmuneImg from "@/assets/cd4-immune.jpg";
 import afyaUbongoImg from "@/assets/afya-ubongo.jpg";
@@ -10,11 +11,17 @@ import royalJellyImg from "@/assets/royal-jelly.jpg";
 import ginsengImg from "@/assets/ginseng.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
+  const [videoModal, setVideoModal] = useState<{ open: boolean; youtubeId: string; title: string }>({
+    open: false,
+    youtubeId: "",
+    title: ""
+  });
   const services = [
     {
       icon: Stethoscope,
@@ -425,7 +432,10 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {podcastEpisodes.map((episode) => (
               <Card key={episode.id} className="overflow-hidden card-hover group">
-                <div className="relative aspect-video">
+                <div 
+                  className="relative aspect-video cursor-pointer"
+                  onClick={() => setVideoModal({ open: true, youtubeId: episode.youtubeId, title: episode.title })}
+                >
                   <img 
                     src={episode.thumbnail} 
                     alt={episode.title}
@@ -440,20 +450,61 @@ const Index = () => {
                 <CardContent className="p-5">
                   <h3 className="font-bold text-lg mb-2 line-clamp-1">{episode.title}</h3>
                   <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{episode.description}</p>
-                  <Button 
-                    size="sm" 
-                    className="w-full"
-                    onClick={() => handleWhatsAppVideo(episode.title)}
-                  >
-                    <Play className="h-4 w-4 mr-2" />
-                    Assistir
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button 
+                      size="sm" 
+                      className="flex-1"
+                      onClick={() => setVideoModal({ open: true, youtubeId: episode.youtubeId, title: episode.title })}
+                    >
+                      <Play className="h-4 w-4 mr-2" />
+                      Assistir
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      variant="outline"
+                      onClick={() => handleWhatsAppVideo(episode.title)}
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      <Dialog open={videoModal.open} onOpenChange={(open) => setVideoModal({ ...videoModal, open })}>
+        <DialogContent className="max-w-4xl p-0 overflow-hidden">
+          <DialogHeader className="p-4 pb-0">
+            <DialogTitle>{videoModal.title}</DialogTitle>
+          </DialogHeader>
+          <div className="aspect-video w-full">
+            {videoModal.open && (
+              <iframe
+                src={`https://www.youtube.com/embed/${videoModal.youtubeId}?autoplay=1`}
+                title={videoModal.title}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
+          </div>
+          <div className="p-4 pt-2">
+            <Button 
+              className="w-full"
+              onClick={() => {
+                handleWhatsAppVideo(videoModal.title);
+                setVideoModal({ ...videoModal, open: false });
+              }}
+            >
+              <MessageCircle className="h-4 w-4 mr-2" />
+              Saber Mais via WhatsApp
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* About Preview */}
       <section className="section-spacing bg-muted/30">
