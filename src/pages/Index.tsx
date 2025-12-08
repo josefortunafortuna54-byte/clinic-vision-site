@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Stethoscope, Pill, Video, Microscope, Leaf, Users, Bot, Calendar, Sparkles, Star, ShoppingCart } from "lucide-react";
+import { ArrowRight, Heart, Stethoscope, Pill, Video, Microscope, Leaf, Users, Bot, Calendar, Sparkles, Star, ShoppingCart, Play, Headphones, MessageCircle } from "lucide-react";
 import spermPowerImg from "@/assets/sperm-power.jpg";
 import cd4ImmuneImg from "@/assets/cd4-immune.jpg";
 import afyaUbongoImg from "@/assets/afya-ubongo.jpg";
@@ -95,8 +95,58 @@ const Index = () => {
     { id: 8, name: "Ginseng", category: "Energia & Vitalidade", description: "Raiz de ginseng para energia e resistência.", image: ginsengImg, price: "18.000 Kz" },
   ];
 
+  const podcastEpisodes = [
+    {
+      id: 1,
+      title: "Saúde Reprodutiva Masculina",
+      description: "Dicas para melhorar a fertilidade masculina naturalmente.",
+      thumbnail: "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=400&h=300&fit=crop"
+    },
+    {
+      id: 2,
+      title: "Cuidados na Gravidez",
+      description: "Orientações sobre alimentação e bem-estar durante a gestação.",
+      thumbnail: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop"
+    },
+    {
+      id: 3,
+      title: "Terapias Naturais",
+      description: "Como as terapias naturais podem ajudar na sua saúde.",
+      thumbnail: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=300&fit=crop"
+    },
+    {
+      id: 4,
+      title: "Menopausa e Bem-Estar",
+      description: "Dicas naturais para lidar com as mudanças hormonais.",
+      thumbnail: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=300&fit=crop"
+    }
+  ];
+
   const handleWhatsAppOrder = (productName: string) => {
     const message = `Olá! Gostaria de saber mais sobre o produto: ${productName}`;
+    const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleWhatsAppVideo = (episodeTitle: string) => {
+    const message = `Olá! Assisti ao vídeo "${episodeTitle}" no site da Clínica Quicep e gostaria de saber mais sobre o assunto abordado.`;
+    const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const openWhatsApp = (message: string) => {
     const url = `https://wa.me/244973003455?text=${encodeURIComponent(message)}`;
     const link = document.createElement("a");
     link.href = url;
@@ -303,8 +353,101 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Preview */}
+      {/* Institutional Video Section */}
+      <section className="section-spacing bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <Video className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold mb-4">Conheça o Espaço da Clínica Quicep</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Veja onde realizamos consultas, terapias e tratamentos tradicionais e modernos.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative aspect-video bg-muted rounded-2xl overflow-hidden shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg cursor-pointer hover:scale-110 transition-transform">
+                    <Play className="h-10 w-10 text-primary ml-1" />
+                  </div>
+                  <p className="text-white font-medium text-lg">Clique para assistir</p>
+                </div>
+              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=450&fit=crop" 
+                alt="Clínica Quicep - Espaço"
+                className="w-full h-full object-cover opacity-60"
+              />
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Button 
+                size="lg" 
+                onClick={() => openWhatsApp("Olá! Gostaria de agendar uma visita à Clínica Quicep.")}
+              >
+                <Calendar className="mr-2 h-5 w-5" />
+                Agendar Visita
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => openWhatsApp("Olá! Gostaria de falar com um atendente da Clínica Quicep.")}
+              >
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Falar com Atendente
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Podcasts & Interviews Section */}
       <section className="section-spacing">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <Headphones className="h-12 w-12 text-primary mx-auto mb-4" />
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold mb-4">Entrevistas e Podcasts</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Histórias reais, conhecimento e saúde ao seu alcance.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {podcastEpisodes.map((episode) => (
+              <Card key={episode.id} className="overflow-hidden card-hover group">
+                <div className="relative aspect-video">
+                  <img 
+                    src={episode.thumbnail} 
+                    alt={episode.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center">
+                      <Play className="h-7 w-7 text-primary ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-5">
+                  <h3 className="font-bold text-lg mb-2 line-clamp-1">{episode.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{episode.description}</p>
+                  <Button 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => handleWhatsAppVideo(episode.title)}
+                  >
+                    <Play className="h-4 w-4 mr-2" />
+                    Assistir
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Preview */}
+      <section className="section-spacing bg-muted/30">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
