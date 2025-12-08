@@ -95,30 +95,39 @@ const Index = () => {
     { id: 8, name: "Ginseng", category: "Energia & Vitalidade", description: "Raiz de ginseng para energia e resistência.", image: ginsengImg, price: "18.000 Kz" },
   ];
 
+  // Helper function to get YouTube thumbnail from video ID
+  const getYouTubeThumbnail = (videoId: string, quality: 'maxresdefault' | 'hqdefault' | 'mqdefault' | 'sddefault' = 'hqdefault') => {
+    return `https://img.youtube.com/vi/${videoId}/${quality}.jpg`;
+  };
+
   const podcastEpisodes = [
     {
       id: 1,
       title: "Saúde Reprodutiva Masculina",
       description: "Dicas para melhorar a fertilidade masculina naturalmente.",
-      thumbnail: "https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=400&h=300&fit=crop"
+      youtubeId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      get thumbnail() { return getYouTubeThumbnail(this.youtubeId); }
     },
     {
       id: 2,
       title: "Cuidados na Gravidez",
       description: "Orientações sobre alimentação e bem-estar durante a gestação.",
-      thumbnail: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=300&fit=crop"
+      youtubeId: "jNQXAC9IVRw", // Replace with actual YouTube video ID
+      get thumbnail() { return getYouTubeThumbnail(this.youtubeId); }
     },
     {
       id: 3,
       title: "Terapias Naturais",
       description: "Como as terapias naturais podem ajudar na sua saúde.",
-      thumbnail: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=300&fit=crop"
+      youtubeId: "kJQP7kiw5Fk", // Replace with actual YouTube video ID
+      get thumbnail() { return getYouTubeThumbnail(this.youtubeId); }
     },
     {
       id: 4,
       title: "Menopausa e Bem-Estar",
       description: "Dicas naturais para lidar com as mudanças hormonais.",
-      thumbnail: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=300&fit=crop"
+      youtubeId: "9bZkp7q19f0", // Replace with actual YouTube video ID
+      get thumbnail() { return getYouTubeThumbnail(this.youtubeId); }
     }
   ];
 
