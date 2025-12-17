@@ -79,6 +79,7 @@ import zainDawaImg from "@/assets/zain-dawa.jpg";
 import mwendoMdundoImg from "@/assets/mwendo-mdundo.jpg";
 import zainBawasirImg from "@/assets/zain-bawasir.jpg";
 import bodySlimImg from "@/assets/body-slim.jpg";
+import saba77Img from "@/assets/saba-77.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -147,6 +148,7 @@ const Produtos = () => {
     { id: 28, name: "Elderberry", category: "Imunidade", description: "Sabugueiro para suporte imunológico.", longDescription: "Elderberry é rico em antioxidantes e ajuda a combater gripes e constipações.", image: elderberryImg, price: "10.000 Kz" },
     { id: 29, name: "Propolis", category: "Imunidade", description: "Própolis natural antibiótico.", longDescription: "Propolis é um antibiótico natural das abelhas com propriedades antimicrobianas.", image: propolisImg, price: "10.000 Kz" },
     { id: 30, name: "Black Seed Oil", category: "Imunidade", description: "Óleo de semente preta para imunidade.", longDescription: "Black Seed Oil (Nigella Sativa) é um potente suplemento para o sistema imunológico.", image: blackSeedOilImg, price: "10.000 Kz" },
+    { id: 79, name: "SABA WA SABINI 77", category: "Imunidade", description: "Fármaco de ervas naturais para tratamento de 77 doenças.", longDescription: "SABA WA SABINI 77 é um fármaco de muitas ervas naturais com finalidade de curar 77 doenças como: perda de cabelos, cura sarnas, aumento do apetite sexual, melhorar a qualidade do sono, melhora açúcar no sangue, ajuda a fortalecer o cérebro, elimina diabetes, lavagem do estômago e muito mais.", image: saba77Img, price: "18.000 Kz" },
     
     // Cognitivo
     { id: 31, name: "AFYA UBONGO", category: "Cognitivo", description: "Suplemento premium para saúde cerebral.", longDescription: "AFYA UBONGO melhora a memória, concentração e saúde cognitiva geral.", image: afyaUbongoImg, price: "18.000 Kz" },
