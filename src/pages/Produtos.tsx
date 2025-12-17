@@ -82,6 +82,7 @@ import bodySlimImg from "@/assets/body-slim.jpg";
 import saba77Img from "@/assets/saba-77.jpg";
 import msaadaTutaImg from "@/assets/msaada-tuta.jpg";
 import kosaNaonaImg from "@/assets/kosa-naona.jpg";
+import zainStomachImg from "@/assets/zain-stomach.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -176,6 +177,7 @@ const Produtos = () => {
     { id: 44, name: "Aloe Vera", category: "Digestão", description: "Aloe vera para saúde digestiva.", longDescription: "Aloe Vera ajuda a acalmar o sistema digestivo e promover a saúde intestinal.", image: aloeVeraImg, price: "10.000 Kz" },
     { id: 45, name: "Apple Cider", category: "Digestão", description: "Vinagre de maçã para digestão.", longDescription: "Apple Cider Vinegar ajuda na digestão, metabolismo e controle de açúcar no sangue.", image: appleCiderImg, price: "10.000 Kz" },
     { id: 77, name: "ZAIN BAWASIR", category: "Digestão", description: "Tratamento eficaz para hemorroidas.", longDescription: "ZAIN BAWASIR, também conhecido como Zain Hemorroidas, é um fármaco eficaz para o tratamento de hemorroidas.", image: zainBawasirImg, price: "10.000 Kz" },
+    { id: 82, name: "ZAIN STOMACH", category: "Digestão", description: "Tratamento natural para doenças do estômago.", longDescription: "ZAIN STOMACH é uma grande mistura de frutas e raízes que trata doenças de estômago como: Tira gás na barriga, Dor quando vai fazer necessidades, Limpeza geral na barriga, Dor de barriga.", image: zainStomachImg, price: "10.000 Kz" },
     
     // Beleza
     { id: 46, name: "GlowSkin", category: "Beleza", description: "Suplemento para pele, cabelo e unhas saudáveis.", longDescription: "GlowSkin oferece colágeno, biotina e vitaminas para beleza de dentro para fora.", image: glowSkinImg, price: "10.000 Kz" },
