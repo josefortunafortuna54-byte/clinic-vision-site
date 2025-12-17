@@ -76,6 +76,7 @@ import glucosamineImg from "@/assets/glucosamine.jpg";
 import propolisImg from "@/assets/propolis.jpg";
 import royalJellyImg from "@/assets/royal-jelly.jpg";
 import zainDawaImg from "@/assets/zain-dawa.jpg";
+import mwendoMdundoImg from "@/assets/mwendo-mdundo.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -117,6 +118,7 @@ const Produtos = () => {
     { id: 8, name: "Prostate Care", category: "Saúde Masculina", description: "Suporte natural para saúde da próstata.", longDescription: "Prostate Care contém saw palmetto e zinco para apoiar a saúde da próstata.", image: prostateCareImg, price: "10.000 Kz" },
     { id: 9, name: "Testosterone Boost", category: "Saúde Masculina", description: "Aumento natural de testosterona.", longDescription: "Testosterone Boost ajuda a aumentar os níveis de testosterona de forma natural.", image: testosteroneBoostImg, price: "10.000 Kz" },
     { id: 10, name: "Saw Palmetto", category: "Saúde Masculina", description: "Suporte natural para próstata e sistema urinário.", longDescription: "Saw Palmetto é um suplemento natural para saúde prostática e função urinária.", image: sawPalmettoImg, price: "10.000 Kz" },
+    { id: 76, name: "MWENDO MDUNDO", category: "Saúde Masculina", description: "Fármaco eficaz para impotência sexual e ejaculação precoce.", longDescription: "MWENDO MDUNDO é um fármaco eficaz para problemas masculinos como impotência sexual e ejaculação precoce.", image: mwendoMdundoImg, price: "10.000 Kz" },
     
     // Saúde Feminina
     { id: 11, name: "Menopause Relief", category: "Saúde Feminina", description: "Alívio natural dos sintomas da menopausa.", longDescription: "Menopause Relief ajuda a aliviar ondas de calor, alterações de humor e outros sintomas.", image: menopauseReliefImg, price: "10.000 Kz" },
