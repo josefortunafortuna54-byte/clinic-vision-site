@@ -78,6 +78,7 @@ import royalJellyImg from "@/assets/royal-jelly.jpg";
 import zainDawaImg from "@/assets/zain-dawa.jpg";
 import mwendoMdundoImg from "@/assets/mwendo-mdundo.jpg";
 import zainBawasirImg from "@/assets/zain-bawasir.jpg";
+import bodySlimImg from "@/assets/body-slim.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -196,6 +197,7 @@ const Produtos = () => {
     { id: 60, name: "Weight Loss", category: "Peso & Metabolismo", description: "Suporte natural para perda de peso.", longDescription: "Weight Loss ajuda a acelerar o metabolismo e queimar gordura.", image: weightLossImg, price: "10.000 Kz" },
     { id: 61, name: "Green Tea", category: "Peso & Metabolismo", description: "Chá verde para metabolismo.", longDescription: "Green Tea Extract acelera o metabolismo e ajuda na perda de peso.", image: greenTeaImg, price: "10.000 Kz" },
     { id: 62, name: "Diabetes Control", category: "Peso & Metabolismo", description: "Suporte natural para açúcar no sangue.", longDescription: "Diabetes Control ajuda a manter níveis saudáveis de glicose no sangue.", image: diabetesControlImg, price: "10.000 Kz" },
+    { id: 78, name: "BODY SLIM", category: "Peso & Metabolismo", description: "Fármaco eficaz para redução de peso corporal.", longDescription: "BODY SLIM é um fármaco eficaz para quem procura seu bem-estar com: Reduzir o peso do corpo de forma saudável e natural.", image: bodySlimImg, price: "10.000 Kz" },
     
     // Desintoxicação
     { id: 63, name: "Liver Detox", category: "Desintoxicação", description: "Desintoxicação natural do fígado.", longDescription: "Liver Detox ajuda a limpar e proteger o fígado de toxinas.", image: liverDetoxImg, price: "10.000 Kz" },
