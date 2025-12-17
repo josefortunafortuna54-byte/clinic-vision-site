@@ -80,6 +80,7 @@ import mwendoMdundoImg from "@/assets/mwendo-mdundo.jpg";
 import zainBawasirImg from "@/assets/zain-bawasir.jpg";
 import bodySlimImg from "@/assets/body-slim.jpg";
 import saba77Img from "@/assets/saba-77.jpg";
+import msaadaTutaImg from "@/assets/msaada-tuta.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -122,6 +123,7 @@ const Produtos = () => {
     { id: 9, name: "Testosterone Boost", category: "Saúde Masculina", description: "Aumento natural de testosterona.", longDescription: "Testosterone Boost ajuda a aumentar os níveis de testosterona de forma natural.", image: testosteroneBoostImg, price: "10.000 Kz" },
     { id: 10, name: "Saw Palmetto", category: "Saúde Masculina", description: "Suporte natural para próstata e sistema urinário.", longDescription: "Saw Palmetto é um suplemento natural para saúde prostática e função urinária.", image: sawPalmettoImg, price: "10.000 Kz" },
     { id: 76, name: "MWENDO MDUNDO", category: "Saúde Masculina", description: "Fármaco eficaz para impotência sexual e ejaculação precoce.", longDescription: "MWENDO MDUNDO é um fármaco eficaz para problemas masculinos como impotência sexual e ejaculação precoce.", image: mwendoMdundoImg, price: "10.000 Kz" },
+    { id: 80, name: "MSAADA KWENYE TUTA", category: "Saúde Masculina", description: "Solução para prolongar o desempenho sexual de 30 a 40 minutos.", longDescription: "MSAADA KWENYE TUTA é uma solução terminal para saborear e excitar durante o sexo por 30 a 40 minutos. É um medicamento muito importante para pessoas afetadas pela masturbação.", image: msaadaTutaImg, price: "10.000 Kz" },
     
     // Saúde Feminina
     { id: 11, name: "Menopause Relief", category: "Saúde Feminina", description: "Alívio natural dos sintomas da menopausa.", longDescription: "Menopause Relief ajuda a aliviar ondas de calor, alterações de humor e outros sintomas.", image: menopauseReliefImg, price: "10.000 Kz" },
