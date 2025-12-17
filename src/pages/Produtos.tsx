@@ -81,6 +81,7 @@ import zainBawasirImg from "@/assets/zain-bawasir.jpg";
 import bodySlimImg from "@/assets/body-slim.jpg";
 import saba77Img from "@/assets/saba-77.jpg";
 import msaadaTutaImg from "@/assets/msaada-tuta.jpg";
+import kosaNaonaImg from "@/assets/kosa-naona.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -196,6 +197,7 @@ const Produtos = () => {
     { id: 58, name: "Glucosamine", category: "Articulações", description: "Glucosamina para cartilagem saudável.", longDescription: "Glucosamine ajuda a manter a saúde das articulações e cartilagens.", image: glucosamineImg, price: "10.000 Kz" },
     { id: 59, name: "Ginger Turmeric", category: "Articulações", description: "Gengibre e açafrão anti-inflamatório.", longDescription: "Ginger Turmeric combina dois poderosos anti-inflamatórios naturais.", image: gingerTurmericImg, price: "10.000 Kz" },
     { id: 75, name: "ZAIN Dawa", category: "Articulações", description: "Fármaco para dores constantes de corpo.", longDescription: "ZAIN Dawa é um fármaco para pessoas que sofrem dor constante de corpo como: Dor de joelho, Dor de coluna, Dor do peito, Coluna transparente, Quentura na coluna.", image: zainDawaImg, price: "10.000 Kz" },
+    { id: 81, name: "KOSA NAONA", category: "Articulações", description: "Fármaco para tratamento de gota.", longDescription: "KOSA NAONA é um fármaco eficaz para pessoas afetadas pela gota, ajudando a aliviar a dor e inflamação nas articulações.", image: kosaNaonaImg, price: "10.000 Kz" },
     
     // Peso & Metabolismo
     { id: 60, name: "Weight Loss", category: "Peso & Metabolismo", description: "Suporte natural para perda de peso.", longDescription: "Weight Loss ajuda a acelerar o metabolismo e queimar gordura.", image: weightLossImg, price: "10.000 Kz" },
