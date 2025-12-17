@@ -9,40 +9,43 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 13%;
+    --foreground: 210 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 13%;
+    --card-foreground: 210 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13%;
+    --popover-foreground: 210 10% 15%;
 
-    --primary: 158 76% 28%;
+    /* Primary: #16A0AA - Teal (saúde, confiança, cabeçalho, botões principais) */
+    --primary: 184 77% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 100% 39%;
+    /* Secondary: #08D101 - Bright Green (ações, preços, WhatsApp, destaques) */
+    --secondary: 118 99% 41%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 180 10% 96%;
+    --muted-foreground: 210 10% 40%;
 
-    --accent: 82 68% 47%;
-    --accent-foreground: 0 0% 13%;
+    /* Accent/Support: #008F00 - Deep Green (títulos, rodapé, elementos naturais) */
+    --accent: 120 100% 28%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 91%;
-    --input: 0 0% 91%;
-    --ring: 158 85% 31%;
+    --border: 180 15% 88%;
+    --input: 180 15% 88%;
+    --ring: 184 77% 38%;
 
-    --radius: 0.625rem;
+    --radius: 0.75rem;
     
     /* Custom design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(158 76% 28%) 0%, hsl(180 100% 39%) 100%);
-    --section-bg: 0 0% 98%;
-    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.06);
-    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.1);
+    --hero-gradient: linear-gradient(135deg, hsl(184 77% 38%) 0%, hsl(118 99% 41%) 100%);
+    --section-bg: 180 20% 98%;
+    --shadow-soft: 0 2px 8px hsl(184 30% 20% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(184 30% 20% / 0.12);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -63,33 +66,36 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 13%;
+    --background: 200 15% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 16%;
+    --card: 200 15% 14%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 16%;
+    --popover: 200 15% 14%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 158 76% 40%;
+    /* Primary: #16A0AA - Teal (lighter for dark mode) */
+    --primary: 184 77% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 100% 45%;
+    /* Secondary: #08D101 - Bright Green */
+    --secondary: 118 90% 48%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 200 15% 20%;
+    --muted-foreground: 200 10% 65%;
 
-    --accent: 82 68% 55%;
-    --accent-foreground: 0 0% 13%;
+    /* Accent/Support: #008F00 - Deep Green (lighter for dark mode) */
+    --accent: 120 90% 38%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 24%;
-    --input: 0 0% 24%;
-    --ring: 158 75% 45%;
+    --border: 200 15% 25%;
+    --input: 200 15% 25%;
+    --ring: 184 77% 45%;
   }
 }
 
