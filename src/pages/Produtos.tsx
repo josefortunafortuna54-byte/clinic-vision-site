@@ -77,6 +77,7 @@ import propolisImg from "@/assets/propolis.jpg";
 import royalJellyImg from "@/assets/royal-jelly.jpg";
 import zainDawaImg from "@/assets/zain-dawa.jpg";
 import mwendoMdundoImg from "@/assets/mwendo-mdundo.jpg";
+import zainBawasirImg from "@/assets/zain-bawasir.jpg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -168,6 +169,7 @@ const Produtos = () => {
     { id: 43, name: "Probiotic", category: "Digestão", description: "Probióticos para saúde intestinal.", longDescription: "Probiotic contém bilhões de CFUs para equilibrar a flora intestinal.", image: probioticImg, price: "10.000 Kz" },
     { id: 44, name: "Aloe Vera", category: "Digestão", description: "Aloe vera para saúde digestiva.", longDescription: "Aloe Vera ajuda a acalmar o sistema digestivo e promover a saúde intestinal.", image: aloeVeraImg, price: "10.000 Kz" },
     { id: 45, name: "Apple Cider", category: "Digestão", description: "Vinagre de maçã para digestão.", longDescription: "Apple Cider Vinegar ajuda na digestão, metabolismo e controle de açúcar no sangue.", image: appleCiderImg, price: "10.000 Kz" },
+    { id: 77, name: "ZAIN BAWASIR", category: "Digestão", description: "Tratamento eficaz para hemorroidas.", longDescription: "ZAIN BAWASIR, também conhecido como Zain Hemorroidas, é um fármaco eficaz para o tratamento de hemorroidas.", image: zainBawasirImg, price: "10.000 Kz" },
     
     // Beleza
     { id: 46, name: "GlowSkin", category: "Beleza", description: "Suplemento para pele, cabelo e unhas saudáveis.", longDescription: "GlowSkin oferece colágeno, biotina e vitaminas para beleza de dentro para fora.", image: glowSkinImg, price: "10.000 Kz" },
