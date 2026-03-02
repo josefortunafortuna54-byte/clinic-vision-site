@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      configuracoes_clinica: {
+        Row: {
+          email: string
+          endereco: string
+          horario: string
+          id: string
+          telefone: string
+          updated_at: string
+        }
+        Insert: {
+          email?: string
+          endereco?: string
+          horario?: string
+          id?: string
+          telefone?: string
+          updated_at?: string
+        }
+        Update: {
+          email?: string
+          endereco?: string
+          horario?: string
+          id?: string
+          telefone?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       consultas: {
         Row: {
           area_dor: string | null
@@ -41,6 +68,39 @@ export type Database = {
           id?: string
           nome_cliente?: string
           telefone?: string
+        }
+        Relationships: []
+      }
+      equipa: {
+        Row: {
+          cargo: string
+          created_at: string
+          descricao: string
+          especialidade: string
+          foto_url: string | null
+          id: string
+          nome: string
+          ordem: number
+        }
+        Insert: {
+          cargo?: string
+          created_at?: string
+          descricao?: string
+          especialidade?: string
+          foto_url?: string | null
+          id?: string
+          nome: string
+          ordem?: number
+        }
+        Update: {
+          cargo?: string
+          created_at?: string
+          descricao?: string
+          especialidade?: string
+          foto_url?: string | null
+          id?: string
+          nome?: string
+          ordem?: number
         }
         Relationships: []
       }
@@ -98,6 +158,27 @@ export type Database = {
           email?: string
           id?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      sobre_conteudo: {
+        Row: {
+          atualizado_em: string
+          historia: string
+          id: string
+          jornada: string
+        }
+        Insert: {
+          atualizado_em?: string
+          historia?: string
+          id?: string
+          jornada?: string
+        }
+        Update: {
+          atualizado_em?: string
+          historia?: string
+          id?: string
+          jornada?: string
         }
         Relationships: []
       }
