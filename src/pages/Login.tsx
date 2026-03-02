@@ -50,8 +50,8 @@ const Login = () => {
           <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-2">
             <Lock className="w-8 h-8 text-primary" />
           </div>
-          <CardTitle className="text-2xl text-primary">Painel Administrativo</CardTitle>
-          <CardDescription>Clínica QUICEP — Acesso restrito</CardDescription>
+          <CardTitle className="text-2xl text-primary">{isRegister ? "Criar Conta" : "Painel Administrativo"}</CardTitle>
+          <CardDescription>Clínica QUICEP — {isRegister ? "Registrar nova conta" : "Acesso restrito"}</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
