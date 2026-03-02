@@ -36,8 +36,8 @@ const Login = () => {
           <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-2">
             <Lock className="w-8 h-8 text-primary" />
           </div>
-          <CardTitle className="text-2xl text-primary">{isRegister ? "Criar Conta" : "Painel Administrativo"}</CardTitle>
-          <CardDescription>Clínica QUICEP — {isRegister ? "Registrar nova conta" : "Acesso restrito"}</CardDescription>
+          <CardTitle className="text-2xl text-primary">Painel Administrativo</CardTitle>
+          <CardDescription>Clínica QUICEP — Acesso restrito</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -45,11 +45,6 @@ const Login = () => {
               <div className="flex items-center gap-2 p-3 rounded-md bg-destructive/10 text-destructive text-sm">
                 <AlertCircle className="w-4 h-4 shrink-0" />
                 {error}
-              </div>
-            )}
-            {success && (
-              <div className="flex items-center gap-2 p-3 rounded-md bg-green-100 text-green-800 text-sm">
-                {success}
               </div>
             )}
             <div className="space-y-2">
@@ -81,15 +76,8 @@ const Login = () => {
               </div>
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? (isRegister ? "Criando..." : "Entrando...") : (isRegister ? "Criar Conta" : "Entrar")}
+              {loading ? "Entrando..." : "Entrar"}
             </Button>
-            <button
-              type="button"
-              onClick={() => { setIsRegister(!isRegister); setError(""); setSuccess(""); }}
-              className="w-full text-sm text-primary hover:underline"
-            >
-              {isRegister ? "Já tenho conta — Entrar" : "Criar nova conta"}
-            </button>
           </form>
         </CardContent>
       </Card>
