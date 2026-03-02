@@ -61,6 +61,11 @@ const Login = () => {
                 {error}
               </div>
             )}
+            {success && (
+              <div className="flex items-center gap-2 p-3 rounded-md bg-green-100 text-green-800 text-sm">
+                {success}
+              </div>
+            )}
             <div className="space-y-2">
               <label className="text-sm font-medium">Email</label>
               <div className="relative">
@@ -90,8 +95,15 @@ const Login = () => {
               </div>
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Entrando..." : "Entrar"}
+              {loading ? (isRegister ? "Criando..." : "Entrando...") : (isRegister ? "Criar Conta" : "Entrar")}
             </Button>
+            <button
+              type="button"
+              onClick={() => { setIsRegister(!isRegister); setError(""); setSuccess(""); }}
+              className="w-full text-sm text-primary hover:underline"
+            >
+              {isRegister ? "Já tenho conta — Entrar" : "Criar nova conta"}
+            </button>
           </form>
         </CardContent>
       </Card>
