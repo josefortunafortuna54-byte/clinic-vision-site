@@ -1,4 +1,4 @@
-import { Package, Video, ClipboardList, LayoutDashboard, LogOut } from "lucide-react";
+import { Package, Video, ClipboardList, LayoutDashboard, LogOut, Info } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
@@ -21,6 +21,7 @@ const items = [
   { title: "Produtos", url: "/admin/produtos", icon: Package },
   { title: "Vídeos", url: "/admin/videos", icon: Video },
   { title: "Consultas", url: "/admin/consultas", icon: ClipboardList },
+  { title: "Página Sobre", url: "/admin/sobre", icon: Info },
 ];
 
 export function AdminSidebar() {
