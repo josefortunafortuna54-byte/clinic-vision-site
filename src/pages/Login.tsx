@@ -10,22 +10,36 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
-  const { signIn } = useAuth();
+  const [isRegister, setIsRegister] = useState(false);
+  const { signIn, signUp } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setSuccess("");
     setLoading(true);
-    const { error } = await signIn(email, password);
-    setLoading(false);
-    if (error) {
-      setError(error.message === "Invalid login credentials"
-        ? "Email ou senha incorretos."
-        : error.message);
+    if (isRegister) {
+      const { error } = await signUp(email, password);
+      setLoading(false);
+      if (error) {
+        setError(error.message);
+      } else {
+        setSuccess("Conta criada com sucesso! Agora faça login.");
+        setIsRegister(false);
+      }
     } else {
-      navigate("/admin");
+      const { error } = await signIn(email, password);
+      setLoading(false);
+      if (error) {
+        setError(error.message === "Invalid login credentials"
+          ? "Email ou senha incorretos."
+          : error.message);
+      } else {
+        navigate("/admin");
+      }
     }
   };
 
