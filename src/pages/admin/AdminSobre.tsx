@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
-import { Loader2, Plus, Trash2, Save, BookOpen, Users, Settings, MapPin } from "lucide-react";
+import { Loader2, Plus, Trash2, Save, BookOpen, Users, Settings, MapPin, Upload, ImageIcon } from "lucide-react";
 import {
   Dialog,
   DialogContent,
