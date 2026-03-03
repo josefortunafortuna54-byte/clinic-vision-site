@@ -106,6 +106,9 @@ function EquipaTab() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editing, setEditing] = useState<any>(null);
   const [form, setForm] = useState({ nome: "", cargo: "", especialidade: "", descricao: "", foto_url: "", ordem: 0 });
+  const [uploading, setUploading] = useState(false);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const { data: equipa, isLoading } = useQuery({
     queryKey: ["equipa"],
@@ -115,6 +118,39 @@ function EquipaTab() {
       return data;
     },
   });
+
+  const uploadPhoto = async (file: File): Promise<string> => {
+    const ext = file.name.split(".").pop();
+    const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${ext}`;
+    const { error } = await supabase.storage.from("equipa").upload(fileName, file, { upsert: true });
+    if (error) throw error;
+    const { data: urlData } = supabase.storage.from("equipa").getPublicUrl(fileName);
+    return urlData.publicUrl;
+  };
+
+  const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      toast.error("Por favor selecione uma imagem");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("A imagem deve ter no máximo 5MB");
+      return;
+    }
+    setUploading(true);
+    try {
+      const url = await uploadPhoto(file);
+      setForm((f) => ({ ...f, foto_url: url }));
+      setPreviewUrl(URL.createObjectURL(file));
+      toast.success("Foto carregada!");
+    } catch {
+      toast.error("Erro ao carregar foto");
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const saveMutation = useMutation({
     mutationFn: async () => {
@@ -149,6 +185,7 @@ function EquipaTab() {
   const resetForm = () => {
     setForm({ nome: "", cargo: "", especialidade: "", descricao: "", foto_url: "", ordem: 0 });
     setEditing(null);
+    setPreviewUrl(null);
   };
 
   const openEdit = (member: any) => {
@@ -161,10 +198,13 @@ function EquipaTab() {
       foto_url: member.foto_url || "",
       ordem: member.ordem,
     });
+    setPreviewUrl(member.foto_url || null);
     setDialogOpen(true);
   };
 
   if (isLoading) return <Loader2 className="animate-spin mx-auto mt-8 text-primary" />;
+
+  const currentPreview = previewUrl || form.foto_url;
 
   return (
     <div className="space-y-4">
@@ -185,9 +225,28 @@ function EquipaTab() {
               <Input placeholder="Cargo" value={form.cargo} onChange={(e) => setForm({ ...form, cargo: e.target.value })} />
               <Input placeholder="Especialidade" value={form.especialidade} onChange={(e) => setForm({ ...form, especialidade: e.target.value })} />
               <Textarea placeholder="Descrição" value={form.descricao} onChange={(e) => setForm({ ...form, descricao: e.target.value })} rows={3} />
-              <Input placeholder="URL da Foto" value={form.foto_url} onChange={(e) => setForm({ ...form, foto_url: e.target.value })} />
+              
+              {/* Photo Upload */}
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Foto do Membro</label>
+                <input type="file" accept="image/*" ref={fileInputRef} onChange={handleFileSelect} className="hidden" />
+                <div className="flex items-center gap-3">
+                  {currentPreview ? (
+                    <img src={currentPreview} alt="Preview" className="w-16 h-16 rounded-lg object-cover border" />
+                  ) : (
+                    <div className="w-16 h-16 rounded-lg border border-dashed flex items-center justify-center bg-muted">
+                      <ImageIcon className="h-6 w-6 text-muted-foreground" />
+                    </div>
+                  )}
+                  <Button type="button" variant="outline" onClick={() => fileInputRef.current?.click()} disabled={uploading}>
+                    {uploading ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Upload className="h-4 w-4 mr-2" />}
+                    {uploading ? "A carregar..." : "Carregar Foto"}
+                  </Button>
+                </div>
+              </div>
+
               <Input type="number" placeholder="Ordem" value={form.ordem} onChange={(e) => setForm({ ...form, ordem: parseInt(e.target.value) || 0 })} />
-              <Button onClick={() => saveMutation.mutate()} disabled={saveMutation.isPending} className="w-full bg-primary hover:bg-primary/90">
+              <Button onClick={() => saveMutation.mutate()} disabled={saveMutation.isPending || uploading} className="w-full bg-primary hover:bg-primary/90">
                 {saveMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : <Save className="h-4 w-4 mr-2" />}
                 {editing ? "Atualizar" : "Adicionar"}
               </Button>
@@ -200,8 +259,12 @@ function EquipaTab() {
         {equipa?.map((m) => (
           <Card key={m.id} className="overflow-hidden">
             <div className="flex">
-              {m.foto_url && (
+              {m.foto_url ? (
                 <img src={m.foto_url} alt={m.nome} className="w-24 h-24 object-cover flex-shrink-0" />
+              ) : (
+                <div className="w-24 h-24 flex-shrink-0 bg-muted flex items-center justify-center">
+                  <ImageIcon className="h-8 w-8 text-muted-foreground" />
+                </div>
               )}
               <CardContent className="p-4 flex-1">
                 <h4 className="font-bold">{m.nome}</h4>
